@@ -4,9 +4,22 @@ import logoDark from "/assets/logo-dark.png";
 import logoLight from "/assets/logo-light.png";
 import {TbMoon, TbSun} from "react-icons/tb"
 import { ThemeContext } from "../context/ThemeProvider";
+import Link from "next/link";
 
 export default function Nav() {
-    const {theme, changeTheme} = useContext(ThemeContext)
+    const {theme, changeTheme} = useContext(ThemeContext);
+
+    const saveFile = () => {
+      fetch('CV.pdf').then(res => {
+          res.blob().then(blob => {
+              const fileURL = window.URL.createObjectURL(blob);
+              let alink = document.createElement('a');
+              alink.href = fileURL;
+              alink.download = 'CV.pdf';
+              alink.click();
+          })
+      })
+  }
 
   return (
     <div className="container">
@@ -29,9 +42,9 @@ export default function Nav() {
         </div>
         <div className="right | flex items-center gap-10">
             <ul className="nav__links | flex gap-10 font-normal text-lg">
-                <li>Introduction</li>
-                <li>Projects</li>
-                <li>About</li>
+                <li><Link href="#">Introduction</Link></li>
+                <li><Link href="#">Projects</Link></li>
+                <li><Link href="#">About</Link></li>
             </ul>
             <div className="theme-div | cursor-pointer grid place-items-center">
                 {theme === "dark" 
@@ -39,7 +52,12 @@ export default function Nav() {
                 : <TbMoon size={25} onClick={changeTheme}/>
                 }
             </div>
-
+            <button 
+              onClick={saveFile}
+              className="button | rounded-full px-6 py-1"
+            >
+              Download CV
+            </button>
         </div>
       </div>
     </div>

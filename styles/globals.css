@@ -127,3 +127,8 @@ body {
   background: var(--bg);
   transition: all ease-in-out .3s;
 }
+
+.button {
+  background: none;
+  border: solid 2px var(--text);
+}

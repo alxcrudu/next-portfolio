@@ -2,7 +2,6 @@ import { useContext } from "react";
 import Head from "next/head";
 import Nav from "../components/Nav";
 import { ThemeContext } from "../context/ThemeProvider";
-// import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const {theme, setTheme, changeTheme} = useContext(ThemeContext)
