@@ -3,6 +3,7 @@ import Image from "next/image";
 import logoDark from "/assets/logo-dark.png";
 import logoLight from "/assets/logo-light.png";
 import {TbMoon, TbSun} from "react-icons/tb"
+import {HiOutlineDownload} from "react-icons/hi"
 import { ThemeContext } from "../context/ThemeProvider";
 import Link from "next/link";
 
@@ -22,7 +23,7 @@ export default function Nav() {
   }
 
   return (
-    <div className="container">
+    <div className="container | fixed">
       <div className="nav | flex justify-between items-center pt-6">
         <div className="logo">
             {theme === "dark"
@@ -41,7 +42,7 @@ export default function Nav() {
             }
         </div>
         <div className="right | flex items-center gap-10">
-            <ul className="nav__links | flex gap-10 font-normal text-lg">
+            <ul className="nav__links | flex gap-10 font-normal">
                 <li><Link href="#">Introduction</Link></li>
                 <li><Link href="#">Projects</Link></li>
                 <li><Link href="#">About</Link></li>
@@ -54,9 +55,9 @@ export default function Nav() {
             </div>
             <button 
               onClick={saveFile}
-              className="button | rounded-full px-6 py-1"
+              className="button | rounded-full px-4 py-2 flex justify-center items-center"
             >
-              Download CV
+              <span className="leading-none">CV</span><HiOutlineDownload size={20}/>
             </button>
         </div>
       </div>
