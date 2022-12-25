@@ -1,12 +1,20 @@
 import Head from "next/head";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeProvider";
+import { MenuContext } from "../context/MenuProvider";
 
 import Nav from "../components/Nav";
 import Introduction from "../components/Introduction";
+import Projects from "../components/Projects";
+import Menu from "../components/Menu";
+import About from "../components/About";
+import MusicPlayer from "../components/MusicPlayer";
+import MuiPlayer from "../components/MuiPlayer";
+import Footer from "../components/Footer"
 
 export default function Home() {
   const {theme} = useContext(ThemeContext)
+  const {menuIsOpen} = useContext(MenuContext)
   return (
     <>
       <Head>
@@ -17,11 +25,21 @@ export default function Home() {
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
+        <link rel="mask-icon" href="/images/favicon.ico" color="#000000"></link>
       </Head>
         <div className={`app ${theme}`}>
           <Nav />
+          {menuIsOpen 
+            ? <Menu />
+            : <></>
+          }
           <Introduction />
-          <div className="min-h-screen">hello</div>
+          <Projects />
+          <About />
+          {/* <MusicPlayer /> */}
+          <MuiPlayer />
+          <div className="min-h-screen">test</div>
+          <Footer />
         </div>
     </>
   );

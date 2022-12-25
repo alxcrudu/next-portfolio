@@ -90,7 +90,7 @@ li {
 
 .container {
   --max-width: 1440px;
-  --padding: 2em;
+  --padding: 3em;
   /* width: min(var(--max-width), 100% - var(--padding)); */
   max-width: var(--max-width);
   padding: 0 var(--padding);
@@ -109,33 +109,72 @@ li {
 }
 
 .app.dark {
-  --text: #5c5c5c;
+  --text: #7c7c7c;
+  --text-menu: #7c7c7c;
   --bg: #171717;
   --accent: #d9d9d9;
   --heading: #d9d9d9;
+  --text-hover: #d9d9d9;
+  --menu-bg: rgba(0, 0, 0, 0.4);
+  --menu-border: rgba(0, 0, 0, 0.3);
 }
 .app.light {
   --text: #171717;
+  --text-menu: #7c7c7c;
   --bg: #d9d9d9;
   --accent: #5c5c5c;
   --heading: #171717;
+  --text-hover: #5c5c5c;
+  --menu-bg: rgba(255, 255, 255, 0.2);
+  --menu-border: rgba(255, 255, 255, 0.3);
 }
 
 .app {
-  color: var(--text);
   background: var(--bg);
   transition: all ease-in-out .3s;
+}
+
+.clickable {
+  transition: color ease .2s;
+}
+.clickable:hover {
+  color: var(--text-hover);
 }
 
 h1 {
   color: var(--heading)
 }
+.project h2 {
+  color: var(--heading)
+}
+
+.text {
+  color: var(--text);
+  transition: all ease-in-out .3s;
+}
+.text-menu {
+  color: var(--text-menu);
+}
 
 .button {
   background: none;
-  border: solid 2px var(--text);
+  border: solid 1.5px var(--text);
   text-align: center;
   vertical-align: middle;
+  transition: all ease-in-out .2s;
+}
+.button:hover {
+  border: solid 1.5px var(--heading)
+}
+.button-menu {
+  background: none;
+  border: solid 1.5px var(--text-menu);
+  text-align: center;
+  vertical-align: middle;
+  transition: all ease-in-out .2s;
+}
+.button-menu:hover {
+  border: solid 1.5px var(--text-hover);
 }
 
 .even-columns {
@@ -146,10 +185,75 @@ h1 {
 @media (min-width: 50em) {
   .even-columns {
     grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    grid-auto-columns: 1fr 1fr;
   }
 }
 
 .nav {
   width: 100%;
+}
+
+/* ! TO BE ENABLED */
+/* .nav-bg {
+  background: var(--bg);
+  -webkit-box-shadow: 0px 7px 68px -14px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 7px 68px -14px rgba(0,0,0,0.3);
+  box-shadow: 0px 7px 68px -14px rgba(0,0,0,0.3);
+} */
+
+.side-menu {
+/* From https://css.glass */
+background: var(--menu-bg);
+border-radius: 16px 0 0 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.9px);
+-webkit-backdrop-filter: blur(9.9px);
+border: 1px solid var(--menu-border);
+}
+
+/* introduction */
+
+.introduction-icon {
+  color: var(--text);
+  transition: all ease-in-out .3s;
+}
+.introduction-icon:hover {
+  color: var(--text-hover);
+}
+
+.introduction-text {
+  max-width: 50ch;
+}
+
+.scroll {
+  color: var(--text);
+}
+
+/* projects section */
+
+.division-line {
+  background: var(--text);
+  height: 1px;
+}
+.projects-container {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+}
+.project {
+  /* background: var(--text); */
+  width: 350px;
+  overflow: hidden;
+}
+.project img {
+  height: 350px;
+  width: 350px;
+}
+.projects-github {
+  writing-mode: vertical-lr;
+}
+
+/* skill section */
+
+.skill-sphere {
+  color: var(--text);
 }
