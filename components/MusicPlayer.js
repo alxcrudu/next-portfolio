@@ -117,6 +117,8 @@ export default function MusicPlayer() {
     }
   ]
 
+  // ! TO BE DONE: when song finishes automatically play next one
+
   return (
     <div className="music-player p-4 rounded-xl">
       <audio controls hidden ref={audio} onTimeUpdate={updateCurrentTime} src={songs[index].audioSrc}></audio>
