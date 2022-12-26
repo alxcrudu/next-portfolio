@@ -36,8 +36,8 @@ export default function Home() {
           <Introduction />
           <Projects />
           <About />
-          {/* <MusicPlayer /> */}
-          <MuiPlayer />
+          <MusicPlayer />
+          {/* <MuiPlayer /> */}
           <div className="min-h-screen">test</div>
           <Footer />
         </div>
