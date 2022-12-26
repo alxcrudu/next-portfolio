@@ -1,7 +1,52 @@
-
+import MusicPlayer from "./MusicPlayer";
+// import MuiPlayer from "../components/MuiPlayer";
 
 export default function About() {
   return (
-    <div>About section</div>
-  )
+    <div className="container | mt-24" id="about__section">
+      <div className="projects-container">
+        <div className="projects-left">
+          <p className="text font-light">About</p>
+        </div>
+        <div className="projects-right | ml-2">
+          <div className="division-line | w-full opacity-40 mt-2"></div>
+
+          <div className="even-columns | mt-16">
+            <div className="about-content">
+              <h2 className="accent-text mb-6 text-xs">WHO AM I</h2>
+              <p className="text font-light">
+                My name is Crudu Alexandru. I am 23 years old, I live in
+                Romania, and I`m a full-stack developer.
+                <br /><br />
+                I enjoy the constant change in the technologies used in
+                the area and love diving into new frameworks and technologies.
+                <br /><br />
+                Spending time customizing, improving and tinkering with my work
+                environment and tools is something I enjoy a lot, as it is
+                something I use for many hours daily.
+                <br /><br />
+                I`m experienced with: Node.js(express), React, Next, Firebase, Tailwind, Framer Motion, SCSS, Docker, Git, Jira and more.
+              </p>
+            </div>
+
+            <div className="spinning-skills">{/* <SkillSphere /> */}</div>
+          </div>
+          <div className="even-columns | mt-16">
+            <div className="player-container">
+              <MusicPlayer />
+              {/* <MuiPlayer /> */}
+            </div>
+
+            <div className="md:text-right mt-12 md:mt-0">
+              <h2 className="accent-text mb-6 text-xs">MY OTHER BIG PASSION</h2>
+              <p className="text font-light">
+                I love making electronic music. I have a deep connection to music and love expressing myself through it. When I am not coding or spending time with friends and family, you will find me making music.<br /><br />
+                In the music player here you will find just a couple of my songs which I plan on publishing soon.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

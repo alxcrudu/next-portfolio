@@ -8,13 +8,18 @@ import Introduction from "../components/Introduction";
 import Projects from "../components/Projects";
 import Menu from "../components/Menu";
 import About from "../components/About";
-import MusicPlayer from "../components/MusicPlayer";
-import MuiPlayer from "../components/MuiPlayer";
 import Footer from "../components/Footer"
+
+// import dynamic from 'next/dynamic'
+
+// const DynamicNav = dynamic(() => import('../components/Nav'), {
+//   ssr: false,
+// })
 
 export default function Home() {
   const {theme} = useContext(ThemeContext)
   const {menuIsOpen} = useContext(MenuContext)
+  // ! REMEMBER TO REACTIVATE STRICT MODE IN NEXT CONFIG AFTER DEVELOPMENT
   return (
     <>
       <Head>
@@ -29,6 +34,7 @@ export default function Home() {
       </Head>
         <div className={`app ${theme}`}>
           <Nav />
+          {/* <DynamicNav /> */}
           {menuIsOpen 
             ? <Menu />
             : <></>
@@ -36,11 +42,9 @@ export default function Home() {
           <Introduction />
           <Projects />
           <About />
-          <MusicPlayer />
-          {/* <MuiPlayer /> */}
-          <div className="min-h-screen">test</div>
           <Footer />
         </div>
     </>
   );
 }
+

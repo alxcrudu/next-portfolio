@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useRef, useEffect, useContext, useCallback } from "react";
 import {TbMoon, TbSun} from "react-icons/tb"
 import {HiOutlineDownload} from "react-icons/hi"
 import {CgMenuMotion, CgClose} from "react-icons/cg"
@@ -9,6 +9,8 @@ import Logo from "./Logo";
 export default function Nav() {
     const {theme, changeTheme} = useContext(ThemeContext);
     const {menuIsOpen, toggleMenu} = useContext(MenuContext)
+
+    const myNav = useRef()
 
     const saveFile = () => {
       fetch('CV.pdf').then(res => {
@@ -21,17 +23,36 @@ export default function Nav() {
           })
       })
   }
+  
+  const onScroll = useCallback(() => {
+    const { scrollY, innerWidth} = window;
+    if(scrollY > 50 && innerWidth > 768) {
+      myNav.current.classList.add("nav-bg-visible");
+    } else {
+      myNav.current.classList.remove("nav-bg-visible");
+    }
+}, []);
+
+useEffect(() => {
+  window.addEventListener("scroll", onScroll, { passive: true });
+  // remove event on unmount to prevent a memory leak with the cleanup
+  return () => {
+     window.removeEventListener("scroll", onScroll, { passive: true });
+  }
+}, [onScroll]);
 
   return (
-      <div className="container nav-bg | fixed z-20">
+      <div ref={myNav} className="container nav-bg | fixed z-20">
         <div className="nav | flex justify-between items-center pt-6 pb-4">
-          <Logo />
+          <a href="#introduction__section">
+            <Logo />
+          </a>
           <div className="right | flex items-center gap-10">
               <ul className="nav__links | hidden gap-10 font-light md:flex">
                   <li className="text clickable"><a href="#introduction__section">Introduction</a></li>
                   <li className="text clickable"><a href="#projects__section">Projects</a></li>
-                  <li className="text clickable"><a href="#skills">Skills</a></li>
-                  <li className="text clickable"><a href="#about">About</a></li>
+                  <li className="text clickable"><a href="#about__section">About</a></li>
+                  {/* <li className="text clickable"><a href="#about">Skills</a></li> */}
               </ul>
               <div className="theme-div clickable text | hidden cursor-pointer md:grid place-items-center">
                   {theme === "dark" 

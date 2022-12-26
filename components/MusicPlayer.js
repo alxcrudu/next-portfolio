@@ -23,7 +23,7 @@ export default function MusicPlayer() {
     const seconds = Math.floor(audio.current.duration);
     setDuration(seconds);
     progressBar.current.max - seconds;
-  }, [audio?.current?.loadedmetadata, audio?.current?.readyState])
+  }, [audio?.current?.loadedmetadata, audio?.current?.readyState, index])
 
   useEffect(() => {
     if (!!audio.current) {
@@ -52,7 +52,7 @@ export default function MusicPlayer() {
     audio.current.currentTime = progressBar.current.value;
     setCurrentTime(progressBar.current.value);
   }
-
+  
   function changeVolume() {
     setVolume(volumeBar.current.value);
   }
@@ -60,6 +60,13 @@ export default function MusicPlayer() {
   function updateCurrentTime() {
     setCurrentTime(audio.current.currentTime);
   }
+
+  useEffect(() => {
+    let roundDuration = Math.floor(currentTime)
+    if (roundDuration == duration && isPlaying) {
+      nextSong()
+    }
+  }, [currentTime]);
   
   function nextSong() {
     switch(index) {
@@ -117,8 +124,6 @@ export default function MusicPlayer() {
     }
   ]
 
-  // ! TO BE DONE: when song finishes automatically play next one
-
   return (
     <div className="music-player p-4 rounded-xl">
       <audio controls hidden ref={audio} onTimeUpdate={updateCurrentTime} src={songs[index].audioSrc}></audio>
@@ -173,6 +178,7 @@ export default function MusicPlayer() {
         </div>
         <MdVolumeUp size={30} />
       </div>
+      <p className="accent-text text-xs text-center font-light">Music not commercially released.</p>
     </div>
   )
 }

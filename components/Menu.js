@@ -36,10 +36,7 @@ export default function Menu() {
               <a href="#projects__section">Projects</a>
             </li>
             <li onClick={closeMenu} className="text-menu clickable mb-6">
-              <a href="#skills">Skills</a>
-            </li>
-            <li onClick={closeMenu} className="text-menu clickable mb-6">
-              <a href="#about">About</a>
+              <a href="#about__section">About</a>
             </li>
           </ul>
           <div className="mb-12">
