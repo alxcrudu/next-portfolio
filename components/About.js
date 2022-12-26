@@ -6,6 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import skillDark from "/public/skill-dark.png";
 import skillLight from "/public/skill-light.png";
+import {SiNextdotjs, SiTailwindcss, SiFramer, SiFirebase, SiDocker} from "react-icons/si"
+
 // import MuiPlayer from "../components/MuiPlayer";
 
 export default function About() {
@@ -35,6 +37,24 @@ export default function About() {
                 <br /><br />
                 I`m experienced with: <span className="font-normal">Node.js(express), React, Next, Firebase, Tailwind, Framer Motion, SCSS, Docker, Git, Jira and more.</span>
               </p>
+              <p className="text pt-12 font-light">Tech I currently enjoy a lot:</p>
+                <div className="introduction-icons | flex gap-4 mt-2">
+                  <Link className="introduction-icon" href="https://nextjs.org/" passHref={true} rel="noopener noreferrer" target="_blank">
+                    <SiNextdotjs size={25} alt="Next.js" />
+                  </Link>
+                  <Link className="introduction-icon" href="https://tailwindcss.com/" passHref={true} rel="noopener noreferrer" target="_blank">
+                    <SiTailwindcss size={25} alt="Tailwind-css" />
+                  </Link>
+                  <Link className="introduction-icon" href="https://www.framer.com/motion/" passHref={true} rel="noopener noreferrer" target="_blank">
+                    <SiFramer size={25} alt="Framer-motion" />
+                  </Link>
+                  <Link className="introduction-icon" href="https://firebase.google.com/" passHref={true} rel="noopener noreferrer" target="_blank">
+                    <SiFirebase size={25} alt="Firebase" />
+                  </Link>
+                  <Link className="introduction-icon" href="https://www.docker.com/" passHref={true} rel="noopener noreferrer" target="_blank">
+                    <SiDocker size={25} alt="Docker" />
+                  </Link>
+                </div>
             </div>
 
             

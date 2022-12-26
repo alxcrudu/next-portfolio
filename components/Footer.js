@@ -28,10 +28,10 @@ export default function Footer() {
               </Link>
 
               <div className="social-links | flex gap-2 text ml-6">
-                <Link className="clickable" href="https://github.com/alxcrudu" passHref={true}>
+                <Link className="clickable" href="https://github.com/alxcrudu" passHref={true} rel="noopener noreferrer" target="_blank">
                   <AiFillGithub size={25} />
                 </Link>
-                <Link className="clickable" href="https://www.linkedin.com/in/crudualex/" passHref={true}>
+                <Link className="clickable" href="https://www.linkedin.com/in/crudualex/" passHref={true} rel="noopener noreferrer" target="_blank">
                   <AiFillLinkedin size={25} />
                 </Link>
               </div>

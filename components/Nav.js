@@ -52,7 +52,6 @@ useEffect(() => {
                   <li className="text clickable"><a href="#introduction__section">Introduction</a></li>
                   <li className="text clickable"><a href="#projects__section">Projects</a></li>
                   <li className="text clickable"><a href="#about__section">About</a></li>
-                  {/* <li className="text clickable"><a href="#about">Skills</a></li> */}
               </ul>
               <div className="theme-div clickable text | hidden cursor-pointer md:grid place-items-center">
                   {theme === "dark" 
