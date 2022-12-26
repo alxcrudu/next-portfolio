@@ -1,4 +1,5 @@
 import { useRef, useEffect, useContext, useCallback } from "react";
+import { LanguageContext } from "../context/LanguageContext";
 import {TbMoon, TbSun} from "react-icons/tb"
 import {HiOutlineDownload} from "react-icons/hi"
 import {CgMenuMotion, CgClose} from "react-icons/cg"
@@ -8,7 +9,8 @@ import Logo from "./Logo";
 
 export default function Nav() {
     const {theme, changeTheme} = useContext(ThemeContext);
-    const {menuIsOpen, toggleMenu} = useContext(MenuContext)
+    const {menuIsOpen, toggleMenu} = useContext(MenuContext);
+    const {t, setLanguage} = useContext(LanguageContext);
 
     const myNav = useRef()
 
@@ -49,9 +51,9 @@ useEffect(() => {
           </a>
           <div className="right | flex items-center gap-10">
               <ul className="nav__links | hidden gap-10 font-light md:flex">
-                  <li className="text clickable"><a href="#introduction__section">Introduction</a></li>
-                  <li className="text clickable"><a href="#projects__section">Projects</a></li>
-                  <li className="text clickable"><a href="#about__section">About</a></li>
+                  <li className="text clickable"><a href="#introduction__section">{t.intro}</a></li>
+                  <li className="text clickable"><a href="#projects__section">{t.proj}</a></li>
+                  <li className="text clickable"><a href="#about__section">{t.about}</a></li>
               </ul>
               <div className="theme-div clickable text | hidden cursor-pointer md:grid place-items-center">
                   {theme === "dark" 

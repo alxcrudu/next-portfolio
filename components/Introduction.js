@@ -1,3 +1,5 @@
+import { useContext } from "react"
+import { LanguageContext } from "../context/LanguageContext";
 import Image from "next/image"
 import Link from "next/link"
 import full from "/public/full.png"
@@ -6,13 +8,15 @@ import {SiNextdotjs, SiTailwindcss, SiAdobeillustrator, SiFramer} from "react-ic
 import {IoIosArrowRoundDown} from 'react-icons/io'
 
 export default function Introduction() {
+  const {t} = useContext(LanguageContext);
+
   return (
     <div className="container" id="introduction__section">
         <div className="even-columns | pt-36">
             <div className="flex justify-center items-start flex-col">
-                <h1 className="text-5xl md:text-5xl lg:text-7xl">I build web applications</h1>
-                <p className="text introduction-text pt-6 font-light">I am a full-stack web developer with a great passion for all things tech-related</p>
-                <p className="text pt-12 font-light">Tech used for building this portfolio website:</p>
+                <h1 className="text-5xl md:text-5xl lg:text-7xl">{t.h1}</h1>
+                <p className="text introduction-text pt-6 font-light">{t.iam}</p>
+                <p className="text pt-12 font-light">{t.tech1}</p>
                 <div className="introduction-icons | flex gap-4 mt-2">
                   <Link className="introduction-icon" href="https://nextjs.org/" passHref={true} rel="noopener noreferrer" target="_blank">
                     <SiNextdotjs size={25} alt="Next.js" />
@@ -28,7 +32,7 @@ export default function Introduction() {
                   </Link>
                 </div>
                 <a href="#projects__section">
-                  <h2 className="text clickable text-xl mt-16 flex cursor-pointer">Check out my projects<span className="pl-4 pt-1"><BsArrowDownRight size={25}/></span></h2>
+                  <h2 className="text clickable text-xl mt-16 flex cursor-pointer">{t.check}<span className="pl-4 pt-1"><BsArrowDownRight size={25}/></span></h2>
                 </a>
             </div>
             <div className="grid place-items-center">

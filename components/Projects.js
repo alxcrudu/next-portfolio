@@ -1,3 +1,5 @@
+import { useContext } from "react"
+import { LanguageContext } from "../context/LanguageContext";
 import Link from "next/link"
 import Image from "next/image"
 import {AiFillGithub} from "react-icons/ai"
@@ -6,14 +8,16 @@ import shortlyProj from "/assets/shortly.png"
 import blogrProj from "/assets/blogr.png"
 
 export default function Projects() {
+    const {t} = useContext(LanguageContext);
+
   return (
     <div className="container | mt-24" id="projects__section">
         <div className="projects-container">
             <div className="projects-left">
-                <p className="text font-light">Projects</p>
+                <p className="text font-light">{t.proj2}</p>
                 <div className="flex w-full justify-start mt-24">
                     <Link href="https://github.com/alxcrudu" passHref={true}>
-                        <h2 className="projects-github text clickable | text-xl flex cursor-pointer">All my projects<span className="mt-2"><AiFillGithub size={25}/></span></h2>
+                        <h2 className="projects-github text clickable | text-xl flex cursor-pointer">{t.allproj}<span className="mt-2"><AiFillGithub size={25}/></span></h2>
                     </Link>
                 </div>
             </div>
@@ -23,17 +27,17 @@ export default function Projects() {
                     <div className="project">
                         <Image src={reactProj} alt="Shortly-project"/>
                         <h2 className="text-2xl mt-6">React to-do app</h2>
-                        <p className="text mt-2 font-light">Made with create-react-app, hooks, state & storing items in local storage.</p>
+                        <p className="text mt-2 font-light">{t.desc1}</p>
                     </div>
                     <div className="project">
                         <Image src={shortlyProj} alt="Shortly-project"/>
                         <h2 className="text-2xl mt-6">Shortly</h2>
-                        <p className="text mt-2 font-light">Ui+API challenge from frontendmentor.io - SCSS, Javascript, validator.Js, fetchAPI</p>
+                        <p className="text mt-2 font-light">{t.desc2}</p>
                     </div>
                     <div className="project">
                         <Image src={blogrProj} alt="Blogr-project"/>
                         <h2 className="text-2xl mt-6">Blogr</h2>
-                        <p className="text mt-2 font-light">UI challenge from frontendmentor.io - Used HTML, SCSS, Bootstrap, some Javascript</p>
+                        <p className="text mt-2 font-light">{t.desc3}</p>
                     </div>
                 </div>
             </div>

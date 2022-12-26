@@ -1,10 +1,10 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
+import { LanguageContext } from "../context/LanguageContext";
 import Image from "next/image";
 import takeme from "../assets/artworks/takeme.png";
 import heartbreak from "../assets/artworks/heartbreak.jpg";
 import inside from "../assets/artworks/inside.png";
 import night from "../assets/artworks/night.jpg";
-
 import {BsFillPlayFill, BsPauseFill} from "react-icons/bs";
 import {FaBackward, FaForward} from "react-icons/fa";
 import {MdVolumeDownAlt, MdVolumeUp} from "react-icons/md";
@@ -16,6 +16,7 @@ export default function MusicPlayer() {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [volume, setVolume] = useState(10);
+  const {t} = useContext(LanguageContext);
 
   const audio = useRef();
   const progressBar = useRef();
@@ -220,7 +221,7 @@ export default function MusicPlayer() {
         </div>
         <MdVolumeUp size={30} />
       </div>
-      <p className="accent-text text-xs text-center font-light opacity-60">*music not commercially released.</p>
+      <p className="accent-text text-xs text-center font-light opacity-60">{t.f1}</p>
     </div>
   )
 }
