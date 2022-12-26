@@ -1,7 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import andme from "../assets/artworks/andme.jpg";
-import farkina from "../assets/artworks/farkina.jpg";
+import takeme from "../assets/artworks/takeme.png";
+import heartbreak from "../assets/artworks/heartbreak.jpg";
+import inside from "../assets/artworks/inside.png";
+import night from "../assets/artworks/night.jpg";
 
 import {BsFillPlayFill, BsPauseFill} from "react-icons/bs";
 import {FaBackward, FaForward} from "react-icons/fa";
@@ -77,7 +79,21 @@ export default function MusicPlayer() {
           setIsPlaying(true)
         }, 500)
         break;
-      case 1:
+        case 1:
+        setIndex(2);
+        setIsPlaying(false)
+        setTimeout(() => {
+          setIsPlaying(true)
+        }, 500)
+        break;
+        case 2:
+        setIndex(3);
+        setIsPlaying(false)
+        setTimeout(() => {
+          setIsPlaying(true)
+        }, 500)
+        break;
+      case 3:
         setIndex(0);
         setIsPlaying(false)
         setTimeout(() => {
@@ -91,7 +107,7 @@ export default function MusicPlayer() {
   function prevSong() {
     switch(index) {
       case 0:
-        setIndex(1);
+        setIndex(3);
         setIsPlaying(false)
         setTimeout(() => {
           setIsPlaying(true)
@@ -104,6 +120,20 @@ export default function MusicPlayer() {
           setIsPlaying(true)
         }, 500)
         break;
+        case 2:
+        setIndex(1);
+        setIsPlaying(false)
+        setTimeout(() => {
+          setIsPlaying(true)
+        }, 500)
+        break;
+        case 3:
+        setIndex(2);
+        setIsPlaying(false)
+        setTimeout(() => {
+          setIsPlaying(true)
+        }, 500)
+        break;
       default:
         return;
     }
@@ -111,16 +141,28 @@ export default function MusicPlayer() {
 
   const songs = [
     {
-      art: farkina,
-      audioSrc: "/farkinaS.mp3",
-      artist: "AKRA",
-      title: "Farkina Var"
+      art: takeme,
+      audioSrc: "/takeme.mp3",
+      artist: "LEX",
+      title: "Take Me By The Hand"
     },
     {
-      art: andme,
-      audioSrc: "/andmeS.mp3",
-      artist: "AKRA",
-      title: "And Me"
+      art: inside,
+      audioSrc: "/inside.mp3",
+      artist: "LEX",
+      title: "Inside"
+    },
+    {
+      art: night,
+      audioSrc: "/night.mp3",
+      artist: "LEX",
+      title: "Night And Day"
+    },
+    {
+      art: heartbreak,
+      audioSrc: "/heartbreak.mp3",
+      artist: "LEX",
+      title: "Heartbreak"
     }
   ]
 
@@ -178,7 +220,7 @@ export default function MusicPlayer() {
         </div>
         <MdVolumeUp size={30} />
       </div>
-      <p className="accent-text text-xs text-center font-light">Music not commercially released.</p>
+      <p className="accent-text text-xs text-center font-light opacity-60">*music not commercially released.</p>
     </div>
   )
 }

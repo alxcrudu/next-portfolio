@@ -42,7 +42,7 @@ useEffect(() => {
 }, [onScroll]);
 
   return (
-      <div ref={myNav} className="container nav-bg | fixed z-20">
+      <div ref={myNav} className="container nav-bg | fixed inset-x-0 z-20">
         <div className="nav | flex justify-between items-center pt-6 pb-4">
           <a href="#introduction__section">
             <Logo />

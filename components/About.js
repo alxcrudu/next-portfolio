@@ -1,7 +1,15 @@
+import { useContext } from "react";
+import { ThemeContext } from "../context/ThemeProvider";
 import MusicPlayer from "./MusicPlayer";
+import {SiAbletonlive} from "react-icons/si"
+import Link from "next/link";
+import Image from "next/image";
+import skillDark from "/public/skill-dark.png";
+import skillLight from "/public/skill-light.png";
 // import MuiPlayer from "../components/MuiPlayer";
 
 export default function About() {
+  const {theme} = useContext(ThemeContext)
   return (
     <div className="container | mt-24" id="about__section">
       <div className="projects-container">
@@ -25,24 +33,40 @@ export default function About() {
                 environment and tools is something I enjoy a lot, as it is
                 something I use for many hours daily.
                 <br /><br />
-                I`m experienced with: Node.js(express), React, Next, Firebase, Tailwind, Framer Motion, SCSS, Docker, Git, Jira and more.
+                I`m experienced with: <span className="font-normal">Node.js(express), React, Next, Firebase, Tailwind, Framer Motion, SCSS, Docker, Git, Jira and more.</span>
               </p>
             </div>
 
-            <div className="spinning-skills">{/* <SkillSphere /> */}</div>
+            
+              {/* <Image className="imac" src={imac} alt="Imac illustration" /> */}
+              <div className="skill-illustration | flex justify-end items-start">
+                {theme === "dark" 
+                  ? <Image src={skillDark} alt="Skills illustration" />
+                  : <Image src={skillLight} alt="Skills illustration" />
+                }
+              </div>
+                {/* <Image className="imac" src={imac} alt="Imac illustration" /> */}
+            
           </div>
-          <div className="even-columns | mt-16">
+          <div className="even-columns | mt-24">
             <div className="player-container">
               <MusicPlayer />
               {/* <MuiPlayer /> */}
             </div>
 
-            <div className="md:text-right mt-12 md:mt-0">
+            <div className="flex flex-col md:text-right md:items-end mt-12 md:mt-0">
               <h2 className="accent-text mb-6 text-xs">MY OTHER BIG PASSION</h2>
               <p className="text font-light">
                 I love making electronic music. I have a deep connection to music and love expressing myself through it. When I am not coding or spending time with friends and family, you will find me making music.<br /><br />
-                In the music player here you will find just a couple of my songs which I plan on publishing soon.
+                In the music player here you will find just a couple of my songs which I plan on publishing soon.<br /><br />
               </p>
+              <div className="flex text items-center">
+                <p>I produce in</p> 
+                <Link className="clickable flex items-center" href="https://www.ableton.com/en/live/" passHref={true}>
+                  <p className="ml-2">Ableton Live 11</p>
+                  <SiAbletonlive className="ml-2" size={30}/>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

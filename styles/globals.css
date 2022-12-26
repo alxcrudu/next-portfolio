@@ -310,6 +310,16 @@ border: 1px solid var(--menu-border);
   -moz-box-shadow: 1px 6px 18px -4px rgba(0,0,0,0.79);
 }
 
+.skill-illustration {
+  max-height: 450px;
+  overflow: hidden;
+}
+.skill-illustration img {
+  width: 100%;
+  object-fit: cover;
+  max-width: 400px;
+}
+
 .accent-text {
   color: var(--slider-progress);
 }
