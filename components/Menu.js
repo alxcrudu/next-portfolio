@@ -1,11 +1,13 @@
 import { TbMoon, TbSun } from "react-icons/tb";
-import { HiOutlineDownload } from "react-icons/hi";
-import { useContext } from "react";
+import { LanguageContext } from "../context/LanguageContext";
 import { ThemeContext } from "../context/ThemeProvider";
 import { MenuContext } from "../context/MenuProvider";
+import { HiOutlineDownload } from "react-icons/hi";
+import { useContext } from "react";
 
 export default function Menu() {
     const {theme, changeTheme} = useContext(ThemeContext);
+    const {t, locale, setLanguage} = useContext(LanguageContext);
     const {closeMenu} = useContext(MenuContext);
     const saveFile = () => {
         fetch('CV.pdf').then(res => {
@@ -40,12 +42,23 @@ export default function Menu() {
             </li>
           </ul>
           <div className="mb-12">
-          <div className="theme-div clickable text-menu | cursor-pointer grid place-items-center mb-6">
-            {theme === "dark" ? (
-              <TbSun size={30} onClick={changeTheme} />
-            ) : (
-              <TbMoon size={25} onClick={changeTheme} />
-            )}
+          <div className="theme-div text-menu | cursor-pointer flex flex-col items-center mb-6">
+            <label className="custom-selector | mb-6 clickable">
+              <select 
+                onChange={setLanguage}
+                defaultValue={locale}
+                >
+                <option value="en">EN</option>
+                <option value="ro">RO</option>
+              </select>
+            </label>
+            <div className="clickable">
+              {theme === "dark" ? (
+                <TbSun size={30} onClick={changeTheme} />
+              ) : (
+                <TbMoon size={25} onClick={changeTheme} />
+              )}
+            </div>
           </div>
           <button
             onClick={saveFile}

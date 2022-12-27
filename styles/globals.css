@@ -226,6 +226,16 @@ backdrop-filter: blur(9.9px);
 border: 1px solid var(--menu-border);
 }
 
+.custom-selector select {
+  border: none;
+  background: none;
+  color: var(--text);
+  outline: none;
+  cursor: pointer;
+  /* appearance: none; */
+  
+}
+
 /* introduction */
 
 .introduction-icon {

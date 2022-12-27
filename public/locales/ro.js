@@ -21,7 +21,7 @@ export default {
     d2: "I enjoy the constant change in the technologies used in the area and love diving into new frameworks and technologies.",
     d3: "Spending time customizing, improving and tinkering with my work environment and tools is something I enjoy a lot, as it is something I use for many hours daily.",
     d4: "Am experienta cu: ",
-    d4s: "Node.js(express), React, Next, Firebase, Tailwind, Framer Motion, SCSS, Docker, Git, Jira and more.",
+    d4s: "Node.js(express), React, Next, Firebase, Tailwind, Framer Motion, SCSS, Docker, Git, Jira si altele.",
     d5: "Tehnologiile mele preferate (in acest moment):",
 // about2
     other: "A DOUA MEA PASIUNE",

@@ -10,7 +10,7 @@ import Logo from "./Logo";
 export default function Nav() {
     const {theme, changeTheme} = useContext(ThemeContext);
     const {menuIsOpen, toggleMenu} = useContext(MenuContext);
-    const {t, setLanguage} = useContext(LanguageContext);
+    const {t, locale, setLanguage} = useContext(LanguageContext);
 
     const myNav = useRef()
 
@@ -55,11 +55,22 @@ useEffect(() => {
                   <li className="text clickable"><a href="#projects__section">{t.proj}</a></li>
                   <li className="text clickable"><a href="#about__section">{t.about}</a></li>
               </ul>
-              <div className="theme-div clickable text | hidden cursor-pointer md:grid place-items-center">
+              <div className="theme-div text | hidden cursor-pointer md:flex items-center">
+                <label className="custom-selector | mr-6">
+                  <select 
+                    onChange={setLanguage}
+                    defaultValue={locale}
+                    >
+                    <option value="en">EN</option>
+                    <option value="ro">RO</option>
+                  </select>
+                </label>
+                <div className="clickable">
                   {theme === "dark" 
-                  ? <TbSun size={30} onClick={changeTheme}/>
-                  : <TbMoon size={25} onClick={changeTheme}/>
+                    ? <TbSun size={30} onClick={changeTheme}/>
+                    : <TbMoon size={25} onClick={changeTheme}/>
                   }
+                </div>
               </div>
               <button 
                 onClick={saveFile}
