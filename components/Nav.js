@@ -68,7 +68,7 @@ useEffect(() => {
                 </label>
                 <div className="clickable">
                   {theme === "dark" 
-                    ? <TbSun size={30} onClick={changeTheme}/>
+                    ? <TbSun size={25} onClick={changeTheme}/>
                     : <TbMoon size={25} onClick={changeTheme}/>
                   }
                 </div>
