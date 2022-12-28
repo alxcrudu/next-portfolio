@@ -2,7 +2,6 @@ import Head from "next/head";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeProvider";
 import { MenuContext } from "../context/MenuProvider";
-
 import Nav from "../components/Nav";
 import Introduction from "../components/Introduction";
 import Projects from "../components/Projects";

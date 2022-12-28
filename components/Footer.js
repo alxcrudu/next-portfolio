@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <div className="container | mt-32">
+    <div className="container | mt-48">
 
-      <div className="pb-12">
+      <div className="pb-24">
 
       <div className="projects-container flex items-center">
 

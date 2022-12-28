@@ -1,4 +1,4 @@
-export default {
+const ro = {
 // nav
     intro: "Introducere",
     proj: "Proiecte",
@@ -18,17 +18,18 @@ export default {
     abt: "Despre",
     who: "CINE SUNT",
     d1: "Ma numesc Crudu Alexandru. Am 23 ani, locuiesc in Romania, si sunt developer full-stack.",
-    d2: "I enjoy the constant change in the technologies used in the area and love diving into new frameworks and technologies.",
-    d3: "Spending time customizing, improving and tinkering with my work environment and tools is something I enjoy a lot, as it is something I use for many hours daily.",
+    d2: "Imi place evolutia continua in domeniu si sa experimentez cu noi framework-uri, librarii, tehnologii.",
     d4: "Am experienta cu: ",
     d4s: "Node.js(express), React, Next, Firebase, Tailwind, Framer Motion, SCSS, Docker, Git, Jira si altele.",
     d5: "Tehnologiile mele preferate (in acest moment):",
 // about2
     other: "A DOUA MEA PASIUNE",
-    e1: "I love making electronic music. I have a deep connection to music and love expressing myself through it. When I am not coding or spending time with friends and family, you will find me making music.",
-    e2: "In the music player here you will find just a couple of my songs which I plan on publishing soon.",
-    e3: "Produc muzica in",
+    e1: "Iubesc sa produc muzica electronica. Am o conexiune stransa cu aceasta si ma exprim prin ea. Cand nu scriu cod sau petrec timp cu familia or prietenii, produc muzica.",
+    e2: "In player-ul alaturat vei gasi cateva din piesele mele, pe care planuiesc sa le lansez in curand.",
+    e3: "Produc in",
     e3s: "Ableton Live 11",
 // player
     f1: "*muzica nelansata comercial."
 }
+
+export default ro;

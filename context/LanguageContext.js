@@ -12,7 +12,8 @@ export function LanguageProvider({ children }) {
   const t = locale === 'ro' ? ro : en;
 
   function setLanguage(e){
-    const locale = e.target.value;
+    const locale = e.target.value; // this works for option form
+    // const locale = e;
     router.push("/", "/", { locale });
   };
 

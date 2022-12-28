@@ -56,10 +56,11 @@ useEffect(() => {
                   <li className="text clickable"><a href="#about__section">{t.about}</a></li>
               </ul>
               <div className="theme-div text | hidden cursor-pointer md:flex items-center">
-                <label className="custom-selector | mr-6">
+                <label className="custom-selector | mr-8">
                   <select 
                     onChange={setLanguage}
                     defaultValue={locale}
+                    className="clickable"
                     >
                     <option value="en">EN</option>
                     <option value="ro">RO</option>

@@ -1,4 +1,4 @@
-export default {
+const en = {
 // nav
     intro: "Introduction",
     proj: "Projects",
@@ -18,17 +18,18 @@ export default {
     abt: "About",
     who: "WHO AM I",
     d1: "My name is Crudu Alexandru. I am 23 years old, I live in Romania, and I`m a full-stack developer.",
-    d2: "I enjoy the constant change in the technologies used in the area and love diving into new frameworks and technologies.",
-    d3: "Spending time customizing, improving and tinkering with my work environment and tools is something I enjoy a lot, as it is something I use for many hours daily.",
+    d2: "I enjoy the constant change in the technologies used in the area and love diving into new frameworks, libraries and technologies.",
     d4: "I`m experienced with: ",
     d4s: "Node.js(express), React, Next, Firebase, Tailwind, Framer Motion, SCSS, Docker, Git, Jira and more.",
     d5: "Tech I currently enjoy a lot:",
 // about2
     other: "MY OTHER BIG PASSION",
-    e1: "I love making electronic music. I have a deep connection to music and love expressing myself through it. When I am not coding or spending time with friends and family, you will find me making music.",
-    e2: "In the music player here you will find just a couple of my songs which I plan on publishing soon.",
+    e1: "I love making electronic music. I have a deep connection to it and love expressing myself through it. When I am not coding or spending time with friends and family, you will find me making music.",
+    e2: "In the player here you will find just a couple of my songs which I plan on publishing soon.",
     e3: "I produce in",
     e3s: "Ableton Live 11",
 // player
     f1: "*music not commercially released."
 }
+
+export default en;

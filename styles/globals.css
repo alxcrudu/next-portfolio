@@ -232,8 +232,7 @@ border: 1px solid var(--menu-border);
   color: var(--text);
   outline: none;
   cursor: pointer;
-  /* appearance: none; */
-  
+  appearance: none;
 }
 
 /* introduction */
@@ -269,8 +268,7 @@ border: 1px solid var(--menu-border);
   overflow: hidden;
 }
 .project img {
-  height: 350px;
-  width: 350px;
+  width: 100%;
 }
 .projects-github {
   writing-mode: vertical-lr;
@@ -320,14 +318,14 @@ border: 1px solid var(--menu-border);
   -moz-box-shadow: 1px 6px 18px -4px rgba(0,0,0,0.79);
 }
 
-.skill-illustration {
-  max-height: 450px;
+/* .skill-illustration {
+  max-height: 450px; 
   overflow: hidden;
-}
+} */
 .skill-illustration img {
   width: 100%;
   object-fit: cover;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .accent-text {

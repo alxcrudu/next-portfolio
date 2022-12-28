@@ -1,20 +1,17 @@
 import { useContext } from "react";
-import { ThemeContext } from "../context/ThemeProvider";
 import { LanguageContext } from "../context/LanguageContext";
 import MusicPlayer from "./MusicPlayer";
 import {SiAbletonlive} from "react-icons/si"
 import Link from "next/link";
 import Image from "next/image";
-import skillDark from "/public/skill-dark.png";
-import skillLight from "/public/skill-light.png";
+import skill from "/public/full2.png";
 import {SiNextdotjs, SiTailwindcss, SiFramer, SiFirebase, SiDocker} from "react-icons/si";
 // import MuiPlayer from "../components/MuiPlayer";
 
 export default function About() {
-  const {theme} = useContext(ThemeContext)
   const {t} = useContext(LanguageContext);
   return (
-    <div className="container | mt-24" id="about__section">
+    <div className="container | mt-28" id="about__section">
       <div className="projects-container">
         <div className="projects-left">
           <p className="text font-light">{t.abt}</p>
@@ -22,15 +19,13 @@ export default function About() {
         <div className="projects-right | ml-2">
           <div className="division-line | w-full opacity-40 mt-2"></div>
 
-          <div className="even-columns | mt-16">
+          <div className="even-columns | mt-24">
             <div className="about-content">
               <h2 className="accent-text mb-6 text-xs">{t.who}</h2>
               <p className="text font-light">
                 {t.d1}
                 <br /><br />
                 {t.d2}
-                <br /><br />
-                {t.d3}
                 <br /><br />
                 {t.d4}<span className="font-normal">{t.d4s}</span>
               </p>
@@ -54,18 +49,13 @@ export default function About() {
                 </div>
             </div>
 
-            
-              {/* <Image className="imac" src={imac} alt="Imac illustration" /> */}
-              <div className="skill-illustration | flex justify-end items-start">
-                {theme === "dark" 
-                  ? <Image src={skillDark} alt="Skills illustration" />
-                  : <Image src={skillLight} alt="Skills illustration" />
-                }
-              </div>
-                {/* <Image className="imac" src={imac} alt="Imac illustration" /> */}
-            
+            <div className="skill-illustration | flex justify-end items-start">
+              <Image src={skill} alt="Skills illustration" />
+            </div>
+
           </div>
           <div className="even-columns | mt-24">
+
             <div className="player-container">
               <MusicPlayer />
               {/* <MuiPlayer /> */}
@@ -85,6 +75,7 @@ export default function About() {
                 </Link>
               </div>
             </div>
+            
           </div>
         </div>
       </div>

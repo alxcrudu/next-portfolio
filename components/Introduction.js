@@ -11,7 +11,7 @@ export default function Introduction() {
   const {t} = useContext(LanguageContext);
 
   return (
-    <div className="container" id="introduction__section">
+    <div className="container relative" id="introduction__section">
         <div className="even-columns | pt-36">
             <div className="flex justify-center items-start flex-col">
                 <h1 className="text-5xl md:text-5xl lg:text-7xl">{t.h1}</h1>
