@@ -7,15 +7,15 @@ export function MenuProvider({ children }) {
 
   function toggleMenu() {
     menuIsOpen === false ? setMenuIsOpen(true) : setMenuIsOpen(false);
-  }
+  };
 
   function closeMenu(){
-    setMenuIsOpen(false)
-  }
+    setMenuIsOpen(false);
+  };
 
   return (
     <MenuContext.Provider value={{ menuIsOpen, toggleMenu, closeMenu }}>
       {children}
     </MenuContext.Provider>
-  );
-}
+  )
+};

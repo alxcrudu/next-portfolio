@@ -12,7 +12,7 @@ const ro = {
     proj2: "Proiecte",
     allproj: "Toate proiectele mele",
     desc1: "Construita cu create-react-app, hooks, state & local storage.",
-    desc2: "Ui+API challenge de pe frontendmentor.io - SCSS, Javascript, validator.Js, fetchAPI",
+    desc2: "Ui+API challenge de pe frontendmentor.io - SCSS, Javascript, validator.js, fetchAPI",
     desc3: "UI challenge de pe frontendmentor.io - HTML, SCSS, Bootstrap, putin Javascript",
 // about
     abt: "Despre",

@@ -1,14 +1,14 @@
 import { useState, useRef, useEffect, useContext } from "react";
-import { LanguageContext } from "../context/LanguageContext";
 import Image from "next/image";
+import { LanguageContext } from "../context/LanguageContext";
+import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
+import { FaBackward, FaForward } from "react-icons/fa";
+import { MdVolumeDownAlt, MdVolumeUp } from "react-icons/md";
+import { IconButton } from "@mui/material";
 import takeme from "../assets/artworks/takeme.png";
 import heartbreak from "../assets/artworks/heartbreak.jpg";
 import inside from "../assets/artworks/inside.png";
 import night from "../assets/artworks/night.jpg";
-import {BsFillPlayFill, BsPauseFill} from "react-icons/bs";
-import {FaBackward, FaForward} from "react-icons/fa";
-import {MdVolumeDownAlt, MdVolumeUp} from "react-icons/md";
-import { IconButton } from "@mui/material";
 
 export default function MusicPlayer() {
   const [index, setIndex] = useState(0);
@@ -16,7 +16,7 @@ export default function MusicPlayer() {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [volume, setVolume] = useState(10);
-  const {t} = useContext(LanguageContext);
+  const { t } = useContext(LanguageContext);
 
   const audio = useRef();
   const progressBar = useRef();
@@ -26,43 +26,43 @@ export default function MusicPlayer() {
     const seconds = Math.floor(audio.current.duration);
     setDuration(seconds);
     progressBar.current.max - seconds;
-  }, [audio?.current?.loadedmetadata, audio?.current?.readyState, index])
+  }, [audio?.current?.loadedmetadata, audio?.current?.readyState, index]);
 
   useEffect(() => {
     if (!!audio.current) {
       let adjustedVolume = volume / 100;
       audio.current.volume = adjustedVolume;
     }
-  }, [audio, volume])
+  }, [audio, volume]);
 
   useEffect(() => {
     if(isPlaying) audio.current.play();
-    else audio.current.pause()
-  }, [isPlaying])
+    else audio.current.pause();
+  }, [isPlaying]);
 
   function togglePlayPause(){
     if(isPlaying) setIsPlaying(false);
     else setIsPlaying(true);
-  }
+  };
 
   function formatDuration(e) {
       const min = Math.floor(e % 3600 / 60).toString().padStart(2,'0'),
             sec = Math.floor(e % 60).toString().padStart(2,'0');
       return `${min}:${sec}`;
-  }
+  };
 
   function changeRange() {
     audio.current.currentTime = progressBar.current.value;
     setCurrentTime(progressBar.current.value);
-  }
+  };
   
   function changeVolume() {
     setVolume(volumeBar.current.value);
-  }
+  };
 
   function updateCurrentTime() {
     setCurrentTime(audio.current.currentTime);
-  }
+  };
 
   useEffect(() => {
     let roundDuration = Math.floor(currentTime)
@@ -70,102 +70,62 @@ export default function MusicPlayer() {
       nextSong()
     }
   }, [currentTime]);
-  
+
+  function reset(){
+    setIsPlaying(false);
+    setTimeout(() => {
+      setIsPlaying(true)
+    }, 500);
+  };
+
   function nextSong() {
-    switch(index) {
-      case 0:
-        setIndex(1);
-        setIsPlaying(false)
-        setTimeout(() => {
-          setIsPlaying(true)
-        }, 500)
-        break;
-        case 1:
-        setIndex(2);
-        setIsPlaying(false)
-        setTimeout(() => {
-          setIsPlaying(true)
-        }, 500)
-        break;
-        case 2:
-        setIndex(3);
-        setIsPlaying(false)
-        setTimeout(() => {
-          setIsPlaying(true)
-        }, 500)
-        break;
-      case 3:
-        setIndex(0);
-        setIsPlaying(false)
-        setTimeout(() => {
-          setIsPlaying(true)
-        }, 500)
-        break;
-      default:
-        return;
+    if(index === 3) {
+      setIndex(0);
+      reset();
+    } else {
+      const prev = index;
+      setIndex(prev + 1);
+      reset();
     }
-  }
+  };
+
   function prevSong() {
-    switch(index) {
-      case 0:
-        setIndex(3);
-        setIsPlaying(false)
-        setTimeout(() => {
-          setIsPlaying(true)
-        }, 500)
-        break;
-      case 1:
-        setIndex(0);
-        setIsPlaying(false)
-        setTimeout(() => {
-          setIsPlaying(true)
-        }, 500)
-        break;
-        case 2:
-        setIndex(1);
-        setIsPlaying(false)
-        setTimeout(() => {
-          setIsPlaying(true)
-        }, 500)
-        break;
-        case 3:
-        setIndex(2);
-        setIsPlaying(false)
-        setTimeout(() => {
-          setIsPlaying(true)
-        }, 500)
-        break;
-      default:
-        return;
+    if(index === 0) {
+      setIndex(3);
+      reset();
+    } else {
+      const prev = index;
+      setIndex(prev - 1);
+      reset();
     }
-  }
+  };
 
   const songs = [
     {
       art: takeme,
-      audioSrc: "/takeme.mp3",
+      audioSrc: "/songs/takeme.mp3",
       artist: "LEX",
       title: "Take Me By The Hand"
     },
     {
       art: inside,
-      audioSrc: "/inside.mp3",
+      audioSrc: "/songs/inside.mp3",
       artist: "LEX",
       title: "Inside"
     },
     {
       art: night,
-      audioSrc: "/night.mp3",
+      audioSrc: "/songs/night.mp3",
       artist: "LEX",
       title: "Night And Day"
     },
     {
       art: heartbreak,
-      audioSrc: "/heartbreak.mp3",
+      audioSrc: "/songs/heartbreak.mp3",
       artist: "LEX",
       title: "Heartbreak"
     }
-  ]
+  ];
 
   return (
     <div className="music-player p-4 rounded-xl">
@@ -224,4 +184,4 @@ export default function MusicPlayer() {
       <p className="accent-text text-xs text-center font-light opacity-60">{t.f1}</p>
     </div>
   )
-}
+};

@@ -1,6 +1,5 @@
 import React from "react";
 import { useRouter } from "next/router";
-
 import en from "../public/locales/en";
 import ro from "../public/locales/ro";
 
@@ -12,8 +11,7 @@ export function LanguageProvider({ children }) {
   const t = locale === 'ro' ? ro : en;
 
   function setLanguage(e){
-    const locale = e.target.value; // this works for option form
-    // const locale = e;
+    const locale = e.target.value;
     router.push("/", "/", { locale });
   };
 
@@ -21,5 +19,5 @@ export function LanguageProvider({ children }) {
     <LanguageContext.Provider value={{ setLanguage, t, locale }}>
       {children}
     </LanguageContext.Provider>
-  );
-}
+  )
+};

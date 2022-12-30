@@ -12,7 +12,7 @@ const en = {
     proj2: "Projects",
     allproj: "All my projects",
     desc1: "Made with create-react-app, hooks, state & storing items in local storage.",
-    desc2: "Ui+API challenge from frontendmentor.io - SCSS, Javascript, validator.Js, fetchAPI",
+    desc2: "Ui+API challenge from frontendmentor.io - SCSS, Javascript, validator.js, fetchAPI",
     desc3: "UI challenge from frontendmentor.io - Used HTML, SCSS, Bootstrap, some Javascript",
 // about
     abt: "About",

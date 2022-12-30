@@ -1,14 +1,14 @@
 import { useContext } from "react";
-import { LanguageContext } from "../context/LanguageContext";
 import Link from "next/link";
 import Image from "next/image";
-import {AiFillGithub} from "react-icons/ai";
+import { LanguageContext } from "../context/LanguageContext";
+import { AiFillGithub } from "react-icons/ai";
 import reactProj from "/assets/react.png";
 import shortlyProj from "/assets/shortly.jpg";
 import blogrProj from "/assets/blogr.jpg";
 
 export default function Projects() {
-    const {t} = useContext(LanguageContext);
+  const { t } = useContext(LanguageContext);
 
   return (
     <div className="container | mt-28" id="projects__section">
@@ -16,7 +16,7 @@ export default function Projects() {
             <div className="projects-left">
                 <p className="text font-light">{t.proj2}</p>
                 <div className="flex w-full justify-start mt-24">
-                    <Link href="https://github.com/alxcrudu" passHref={true}>
+                    <Link href="https://github.com/alxcrudu" passHref={true} rel="noopener noreferrer" target="_blank">
                         <h2 className="projects-github text clickable | text-xl flex cursor-pointer">{t.allproj}<span className="mt-2"><AiFillGithub size={25}/></span></h2>
                     </Link>
                 </div>
@@ -44,4 +44,4 @@ export default function Projects() {
         </div>
     </div>
   )
-}
+};
