@@ -9,12 +9,6 @@ import Menu from "../components/Menu";
 import About from "../components/About";
 import Footer from "../components/Footer";
 
-// import dynamic from 'next/dynamic'
-
-// const DynamicNav = dynamic(() => import('../components/Nav'), {
-//   ssr: false,
-// })
-
 export default function Home() {
   const { theme } = useContext(ThemeContext);
   const { menuIsOpen } = useContext(MenuContext);
@@ -31,9 +25,8 @@ export default function Home() {
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"/>
         <link rel="mask-icon" href="/images/favicon.ico" color="#000000"></link>
       </Head>
-      <div className={`app ${theme}`}>
+      <main className={`app ${theme}`}>
         <Nav />
-        {/* <DynamicNav /> */}
         {menuIsOpen 
           ? <Menu />
           : <></>
@@ -42,7 +35,7 @@ export default function Home() {
         <Projects />
         <About />
         <Footer />
-      </div>
+      </main>
     </>
   )
 };
