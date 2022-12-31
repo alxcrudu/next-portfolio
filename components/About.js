@@ -18,7 +18,7 @@ export default function About() {
         </div>
         <div className="projects-right | md:ml-2">
           <div className="flex items-center">
-            <p className="text | md:hidden font-light mr-6">{t.proj2}</p>
+            <p className="text | md:hidden font-light mr-6">{t.abt}</p>
             <div className="division-line | w-full opacity-40 md:mt-3"></div>
           </div>
           <div className="even-columns | mt-24">

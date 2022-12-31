@@ -26,7 +26,7 @@ export default function Projects() {
                     <p className="text | md:hidden font-light mr-6">{t.proj2}</p>
                     <div className="division-line | w-full opacity-40 md:mt-3"></div>
                 </div>
-                <div className="projects-selector | flex flex-wrap gap-12 mt-24">
+                <div className="projects-selector | mt-24">
                     <div className="project">
                         <Image src={shortlyProj} alt="Shortly-project"/>
                         <h2 className="text-2xl mt-6">Shortly</h2>
