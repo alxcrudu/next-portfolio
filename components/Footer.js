@@ -10,13 +10,18 @@ export default function Footer() {
       <div className="pb-24">
       <div className="projects-container flex items-center">
         <div className="projects-left">
-          <a href="#introduction__section">
+          <a className="hidden md:block" href="#introduction__section">
             <Logo />
           </a>
         </div>
-        <div className="projects-right flex justify-between">
-          <p className="text">©{year} Crudu Alexandru.</p>
-          <div className="flex items-center">
+        <div className="projects-right flex flex-col justify-center md:justify-between md:flex-row">
+          <div className="flex items-center justify-center mb-6 md:mb-0">
+            <a className="md:hidden mr-3 w-6" href="#introduction__section">
+              <Logo />
+            </a>
+            <p className="text copyright-text">©{year} Crudu Alexandru.</p>
+          </div>
+          <div className="flex items-center justify-center">
           <Link className="flex text clickable" href="mailto:alexcruducode@gmail.com">
             <AiOutlineMail size={20} />
             <p className="ml-2">alexcruducode@gmail.com</p>

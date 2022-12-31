@@ -14,10 +14,13 @@ export default function About() {
     <div className="container | mt-28" id="about__section">
       <div className="projects-container">
         <div className="projects-left">
-          <p className="text font-light">{t.abt}</p>
+          <p className="text | hidden md:block font-light">{t.abt}</p>
         </div>
-        <div className="projects-right | ml-2">
-          <div className="division-line | w-full opacity-40 mt-2"></div>
+        <div className="projects-right | md:ml-2">
+          <div className="flex items-center">
+            <p className="text | md:hidden font-light mr-6">{t.proj2}</p>
+            <div className="division-line | w-full opacity-40 md:mt-3"></div>
+          </div>
           <div className="even-columns | mt-24">
             <div className="about-content">
               <h2 className="accent-text mb-6 text-xs">{t.who}</h2>
@@ -47,12 +50,12 @@ export default function About() {
                   </Link>
                 </div>
             </div>
-            <div className="skill-illustration | flex justify-end items-start">
+            <div className="skill-illustration | flex justify-end items-start mt-10 md:mt-0">
               <Image src={skill} alt="Skills illustration" />
             </div>
           </div>
-          <div className="even-columns | mt-24">
-            <div className="player-container">
+          <div className="even-columns | mt-16 md:mt-24">
+            <div className="player-container | flex justify-center md:justify-start">
               <MusicPlayer />
             </div>
             <div className="flex flex-col md:text-right md:items-end mt-12 md:mt-0">

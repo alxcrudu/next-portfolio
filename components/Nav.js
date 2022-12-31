@@ -1,18 +1,37 @@
-import { useRef, useEffect, useContext, useCallback } from "react";
+import { useRef, useEffect, useContext, useCallback, useState } from "react";
 import { ThemeContext } from "../context/ThemeProvider";
 import { MenuContext } from "../context/MenuProvider";
 import { LanguageContext } from "../context/LanguageContext";
+import { motion, AnimatePresence } from "framer-motion";
 import { TbMoon, TbSun } from "react-icons/tb";
 import { HiOutlineDownload } from "react-icons/hi";
 import { CgMenuMotion, CgClose } from "react-icons/cg";
 import Logo from "../components/Logo";
 
 export default function Nav() {
+  const [sunShow, setSunShow] = useState(false);
+  const [moonShow, setMoonShow] = useState(false);
   const { theme, changeTheme } = useContext(ThemeContext);
   const { menuIsOpen, toggleMenu } = useContext(MenuContext);
   const { t, locale, setLanguage } = useContext(LanguageContext);
 
   const myNav = useRef();
+
+  useEffect(() => {
+    if(theme === "dark") {
+      setSunShow(true);
+      setMoonShow(false);
+    } else {
+      setSunShow(false);
+      setMoonShow(true);
+    }
+  }, []);
+  
+  function toggleTheme() {
+    setSunShow(!sunShow);
+    setMoonShow(!moonShow);
+    changeTheme();
+  };
 
   const saveFile = () => {
     fetch('CV.pdf').then(res => {
@@ -66,11 +85,33 @@ export default function Nav() {
                   <option value="ro">RO</option>
                 </select>
               </label>
-              <div className="clickable">
-                {theme === "dark" 
-                  ? <TbSun size={25} onClick={changeTheme}/>
-                  : <TbMoon size={25} onClick={changeTheme}/>
-                }
+              <div className="clickable toggle-icons" onClick={toggleTheme}>
+                <AnimatePresence>
+                  {sunShow && 
+                    <motion.div 
+                      className="icon-toggle"
+                      initial={{ x: -50, y:25, rotate: -100, opacity: 0 }}
+                      animate={{ x: 0, y:0, rotate: 0, opacity: 1 }}
+                      exit={{ x: 50, y:25, rotate: 100, opacity: 0 }}
+                      transition={{type: "spring", duration: .8}}
+                    >
+                      <TbSun size={25} />
+                    </motion.div>
+                  }
+                </AnimatePresence>
+                <AnimatePresence>
+                  {moonShow && 
+                    <motion.div
+                      className="icon-toggle"
+                      initial={{ x: -50, y:25, rotate: -100, opacity: 0 }}
+                      animate={{ x: 0, y:0, rotate: 0, opacity: 1 }}
+                      exit={{ x: 50, y:25, rotate: 100, opacity: 0 }}
+                      transition={{type: "spring", duration: .8}}
+                    >
+                      <TbMoon size={25} />
+                    </motion.div>
+                  }
+                </AnimatePresence>
               </div>
             </div>
             <button 

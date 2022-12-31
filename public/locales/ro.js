@@ -3,6 +3,7 @@ const ro = {
     intro: "Introducere",
     proj: "Proiecte",
     about: "Despre",
+    download: "Descarca CV",
 // introduction
     h1: "Construiesc aplicatii web",
     iam: "Sunt un developer full-stack, pasionat de tot ce inseamna tehnologie",

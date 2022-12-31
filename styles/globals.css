@@ -224,6 +224,7 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(9.9px);
 -webkit-backdrop-filter: blur(9.9px);
 border: 1px solid var(--menu-border);
+min-width: 280px;
 }
 
 .custom-selector select {
@@ -233,6 +234,16 @@ border: 1px solid var(--menu-border);
   outline: none;
   cursor: pointer;
   appearance: none;
+}
+
+.toggle-icons {
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+.icon-toggle {
+  position: absolute;
+  top: 0;
 }
 
 /* introduction */
@@ -263,6 +274,15 @@ border: 1px solid var(--menu-border);
   display: grid;
   grid-template-columns: 100px 1fr;
 }
+@media (max-width: 50em) {
+  .projects-container {
+    display: grid;
+    grid-template-columns: 0 1fr;
+  }
+  .projects-selector {
+    justify-content: center;
+  }
+}
 .project {
   width: 350px;
   overflow: hidden;
@@ -270,6 +290,12 @@ border: 1px solid var(--menu-border);
 .project img {
   width: 100%;
 }
+@media (max-width: 31.25em) {
+  .project {
+    width: 100%;
+  }
+}
+
 .projects-github {
   writing-mode: vertical-lr;
 }

@@ -14,16 +14,19 @@ export default function Projects() {
     <div className="container | mt-28" id="projects__section">
         <div className="projects-container">
             <div className="projects-left">
-                <p className="text font-light">{t.proj2}</p>
-                <div className="flex w-full justify-start mt-24">
+                <p className="text | hidden md:block font-light">{t.proj2}</p>
+                <div className="hidden md:flex w-full justify-start mt-24">
                     <Link href="https://github.com/alxcrudu" passHref={true} rel="noopener noreferrer" target="_blank">
                         <h2 className="projects-github text clickable | text-xl flex cursor-pointer">{t.allproj}<span className="mt-2"><AiFillGithub size={25}/></span></h2>
                     </Link>
                 </div>
             </div>
-            <div className="projects-right | ml-2">
-                <div className="division-line | w-full opacity-40 mt-2"></div>
-                <div className="flex flex-wrap gap-12 mt-24">
+            <div className="projects-right | md:ml-2">
+                <div className="flex items-center">
+                    <p className="text | md:hidden font-light mr-6">{t.proj2}</p>
+                    <div className="division-line | w-full opacity-40 md:mt-3"></div>
+                </div>
+                <div className="projects-selector | flex flex-wrap gap-12 mt-24">
                     <div className="project">
                         <Image src={shortlyProj} alt="Shortly-project"/>
                         <h2 className="text-2xl mt-6">Shortly</h2>
