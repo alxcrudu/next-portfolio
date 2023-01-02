@@ -9,6 +9,12 @@ import Menu from "../components/Menu";
 import About from "../components/About";
 import Footer from "../components/Footer";
 
+// import dynamic from 'next/dynamic'
+
+// const DynamicIntro = dynamic(() => import("../components/Introduction"), {
+//   ssr: false,
+// })
+
 export default function Home() {
   const { theme } = useContext(ThemeContext);
   const { menuIsOpen } = useContext(MenuContext);
@@ -32,6 +38,7 @@ export default function Home() {
           : <></>
         }
         <Introduction />
+        {/* <DynamicIntro /> */}
         <Projects />
         <About />
         <Footer />

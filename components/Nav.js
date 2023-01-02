@@ -63,7 +63,13 @@ export default function Nav() {
   }, [onScroll]);
 
   return (
-    <div ref={myNav} className="container nav-bg | fixed inset-x-0 z-20">
+    <motion.div 
+      ref={myNav} 
+      className="container nav-bg | fixed inset-x-0 z-20"
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      transition={{delay: 1.2, duration: 1}}
+    >
       <div className="nav | flex justify-between items-center pt-6 pb-4">
         <a href="#introduction__section">
           <Logo />
@@ -90,9 +96,9 @@ export default function Nav() {
                   {sunShow && 
                     <motion.div 
                       className="icon-toggle"
-                      initial={{ x: -50, y:25, rotate: -100, opacity: 0 }}
-                      animate={{ x: 0, y:0, rotate: 0, opacity: 1 }}
-                      exit={{ x: 50, y:25, rotate: 100, opacity: 0 }}
+                      initial={{ x: -50, y: 25, rotate: -100, opacity: 0 }}
+                      animate={{ x: 0, y: 0, rotate: 0, opacity: 1 }}
+                      exit={{ x: 50, y: 25, rotate: 100, opacity: 0 }}
                       transition={{type: "spring", duration: .8}}
                     >
                       <TbSun size={25} />
@@ -103,9 +109,9 @@ export default function Nav() {
                   {moonShow && 
                     <motion.div
                       className="icon-toggle"
-                      initial={{ x: -50, y:25, rotate: -100, opacity: 0 }}
-                      animate={{ x: 0, y:0, rotate: 0, opacity: 1 }}
-                      exit={{ x: 50, y:25, rotate: 100, opacity: 0 }}
+                      initial={{ x: -50, y: 25, rotate: -100, opacity: 0 }}
+                      animate={{ x: 0, y: 0, rotate: 0, opacity: 1 }}
+                      exit={{ x: 50, y: 25, rotate: 100, opacity: 0 }}
                       transition={{type: "spring", duration: .8}}
                     >
                       <TbMoon size={25} />
@@ -128,6 +134,6 @@ export default function Nav() {
             </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

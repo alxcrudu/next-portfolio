@@ -146,7 +146,10 @@ li {
 }
 
 h1 {
-  color: var(--heading)
+  color: var(--heading);
+}
+.heading {
+  color: var(--heading);
 }
 .project h2 {
   color: var(--heading)

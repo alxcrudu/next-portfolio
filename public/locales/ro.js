@@ -5,7 +5,8 @@ const ro = {
     about: "Despre",
     download: "Descarca CV",
 // introduction
-    h1: "Construiesc aplicatii web",
+    h1: "Construiesc ",
+    h1b: "aplicatii web",
     iam: "Sunt un developer full-stack, pasionat de tot ce inseamna tehnologie",
     tech1: "Tehnologii folosite pentru dezvoltarea acestui website:",
     check: "Vezi proiectele mele",

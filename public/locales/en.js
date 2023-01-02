@@ -5,7 +5,8 @@ const en = {
     about: "About",
     download: "Download my CV",
 // introduction
-    h1: "I build web applications",
+    h1: "I build web",
+    h1b: "applications",
     iam: "I am a full-stack web developer with a great passion for all things tech-related",
     tech1: "Tech used for building this portfolio website:",
     check: "Check out my projects",
