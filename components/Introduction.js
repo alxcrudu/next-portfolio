@@ -122,11 +122,12 @@ export default function Introduction() {
       </div>
       <motion.div 
         className="scroll"
+        initial={{opacity: 0}}
         animate={{
           opacity: [0, 1, 1, 1, 0],
           y: [0,15,0,15,0]
         }}
-        transition={{delay: 3, duration: 3}}
+        transition={{delay: 4, duration: 3}}
       >
         <div className="flex flex-col absolute left-2/4 bottom-2">
           <BsMouse size={25} />

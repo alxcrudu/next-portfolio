@@ -44,11 +44,14 @@ export default function MusicPlayer() {
     if(isPlaying) setIsPlaying(false);
     else setIsPlaying(true);
   };
-
+  
   function formatDuration(e) {
-      const min = Math.floor(e % 3600 / 60).toString().padStart(2,'0'),
-            sec = Math.floor(e % 60).toString().padStart(2,'0');
-      return `${min}:${sec}`;
+    if(isNaN(e)){
+      return "--:--"
+    }
+    const min = Math.floor(e % 3600 / 60).toString().padStart(2,'0'),
+          sec = Math.floor(e % 60).toString().padStart(2,'0');
+    return `${min}:${sec}`;
   };
 
   function changeRange() {
@@ -69,7 +72,7 @@ export default function MusicPlayer() {
     if (roundDuration == duration && isPlaying) {
       nextSong()
     }
-  }, [currentTime]);
+  }, [currentTime]); // eslint-disable-line
 
   function reset(){
     setIsPlaying(false);
@@ -132,7 +135,7 @@ export default function MusicPlayer() {
       <audio controls hidden ref={audio} onTimeUpdate={updateCurrentTime} src={songs[index].audioSrc}></audio>
       <div className="flex items-center">
         <Image className="rounded-xl w-28 mr-4" placeholder="blur" priority src={songs[index].art} alt="Song artwork"/>
-        <div>
+        <div className="song-info">
           <h2 className="song-name | text-lg">{songs[index].title.toString()}</h2>
           <p className="artist | text font-light">{songs[index].artist.toString()}</p>
         </div>

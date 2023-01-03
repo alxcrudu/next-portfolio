@@ -25,7 +25,7 @@ export default function Nav() {
       setSunShow(false);
       setMoonShow(true);
     }
-  }, []);
+  }, []); // eslint-disable-line
   
   function toggleTheme() {
     setSunShow(!sunShow);
