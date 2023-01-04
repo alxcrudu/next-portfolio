@@ -109,7 +109,7 @@ export default function About() {
               initial={{opacity: 0, x: -20}}
               whileInView={{opacity: 1, x: 0}}
               viewport={{once: true}}
-              transition={{duration: 1, delay: .3}}
+              transition={{duration: 1, delay: .2}}
             >
               <MusicPlayer />
             </motion.div>
@@ -119,7 +119,7 @@ export default function About() {
                 initial={{opacity: 0}}
                 whileInView={{opacity: 1}}
                 viewport={{once: true}}
-                transition={{duration: 1, delay: .4}}
+                transition={{duration: 1, delay: .3}}
               >
                 {t.other}
               </motion.h2>
@@ -128,7 +128,7 @@ export default function About() {
                 initial={{opacity: 0}}
                 whileInView={{opacity: 1}}
                 viewport={{once: true}}
-                transition={{duration: 1, delay: .5}}
+                transition={{duration: 1, delay: .4}}
               >
                 {t.e1}<br /><br />
                 {t.e2}<br /><br />
@@ -138,7 +138,7 @@ export default function About() {
                 initial={{opacity: 0}}
                 whileInView={{opacity: 1}}
                 viewport={{once: true}}
-                transition={{duration: 1, delay: .6}}
+                transition={{duration: 1, delay: .5}}
               >
                 <p>{t.e3}</p> 
                 <Link className="clickable flex items-center" href="https://www.ableton.com/en/live/" passHref={true} rel="noopener noreferrer" target="_blank">

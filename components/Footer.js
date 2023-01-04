@@ -12,7 +12,7 @@ export default function Footer() {
       initial={{opacity: 0}}
       whileInView={{opacity: 1}}
       viewport={{once: true, amount: 0.3}}
-      transition={{duration: 1, delay: .3}}
+      transition={{duration: 1, delay: .2}}
     >
       <div className="pb-24">
       <div className="projects-container flex items-center">
