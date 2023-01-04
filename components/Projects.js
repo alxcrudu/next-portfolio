@@ -19,18 +19,27 @@ export default function Projects() {
         descr: t.desc3,
         img: shortlyProj,
         bg: "ovone",
+        github: "https://github.com/alxcrudu/shortly-challenge",
+        live: "#",
+        alt: "Shortly project image",
     },
     {
         title: "Blogr",
         descr: t.desc2,
         img: blogrProj,
         bg: "ovtwo",
+        github: "https://github.com/alxcrudu/blogr-ui",
+        live: "#",
+        alt: "Blogr project image",
     },
     {
         title: "React to-do app",
         descr: t.desc1,
         img: reactProj,
         bg: "ovthree",
+        github: "https://github.com/alxcrudu/react-to-do-app",
+        live: "#",
+        alt: "To-do project image",
     },
   ];
 
@@ -89,177 +98,65 @@ export default function Projects() {
                     ></motion.div>
                 </div>
                 <div className="projects-selector | mt-24">
-                    <div className="project">
-                        <motion.div 
-                            className="imgg | relative"
-                            variants={clipPath}
-                            initial="hidden"
-                            whileInView="animate"
-                            viewport={{once: true}}
-                        >
-                            <motion.div 
-                                className="proj-overlay | absolute z-20"
-                                initial={{opacity: 0}}
-                                whileHover={{opacity: 1}}
-                            >
-                                <div className="flex items-center justify-center h-full gap-8">
-                                    <div className="button-bg rounded-full">
-                                        <Link href="https://github.com/alxcrudu/shortly-challenge" passHref={true} rel="noopener noreferrer" target="_blank">
-                                            <IconButton className="overlay-btn">
-                                                <AiFillGithub size={25}/>
-                                            </IconButton>
-                                        </Link>
-                                    </div>
-                                    <div className="button-bg rounded-full">
-                                        <IconButton className="overlay-btn">
-                                            <BsGlobe size={20}/>
-                                        </IconButton>
-                                    </div>
-                                </div>
-                            </motion.div>
-                            <div className="imgoverlay ovone"></div>
+                    {projects.map((project, i) => (
+                        <div className="project" key={project + "-" + i}>
                             <motion.div
-                                initial={{opacity: 0}}
-                                whileInView={{opacity: 1}}
-                                transition={{delay: 1.6, duration: .8}}
+                                className="imgg | relative"
+                                variants={clipPath}
+                                initial="hidden"
+                                whileInView="animate"
                                 viewport={{once: true}}
                             >
-                                <Image src={shortlyProj} alt="Shortly-project"/>
-                            </motion.div>
-                        </motion.div>
-                        <motion.h2 
-                            className="text-2xl mt-6"
-                            initial={{opacity: 0, y: 20}}
-                            whileInView={{opacity: 1, y: 0}}
-                            viewport={{once: true, amount: .5}}
-                            transition={{duration: 1}}
-                        >
-                            Shortly
-                        </motion.h2>
-                        <motion.p 
-                            className="text mt-2 font-light"
-                            initial={{opacity: 0}}
-                            whileInView={{opacity: 1}}
-                            viewport={{once: true, amount: .5}}
-                            transition={{duration: 1, delay: .5}}
-                        >
-                            {t.desc2}
-                        </motion.p>
-                    </div>
-                    <div className="project">
-                        <motion.div 
-                            className="imgg | relative"
-                            variants={clipPath}
-                            initial="hidden"
-                            whileInView="animate"
-                            viewport={{once: true}}
-                        >
-                            <motion.div 
-                                className="proj-overlay | absolute z-20"
-                                initial={{opacity: 0}}
-                                whileHover={{opacity: 1}}
-                            >
-                                <div className="flex items-center justify-center h-full gap-8">
-                                    <div className="button-bg rounded-full">
-                                        <Link href="https://github.com/alxcrudu/blogr-ui" passHref={true} rel="noopener noreferrer" target="_blank">
+                                <motion.div 
+                                    className="proj-overlay | absolute z-20"
+                                    initial={{opacity: 0}}
+                                    whileHover={{opacity: 1}}
+                                >
+                                    <div className="flex items-center justify-center h-full gap-8">
+                                        <div className="button-bg rounded-full">
+                                            <Link href={projects[i].github} passHref={true} rel="noopener noreferrer" target="_blank">
+                                                <IconButton className="overlay-btn">
+                                                    <AiFillGithub size={25}/>
+                                                </IconButton>
+                                            </Link>
+                                        </div>
+                                        <div className="button-bg rounded-full">
                                             <IconButton className="overlay-btn">
-                                                <AiFillGithub size={25}/>
+                                                <BsGlobe size={20}/>
                                             </IconButton>
-                                        </Link>
+                                        </div>
                                     </div>
-                                    <div className="button-bg rounded-full">
-                                        <IconButton className="overlay-btn">
-                                            <BsGlobe size={20}/>
-                                        </IconButton>
-                                    </div>
-                                </div>
+                                </motion.div>
+                                <div className={`imgoverlay ${projects[i].bg}`}></div>
+                                <motion.div
+                                    initial={{opacity: 0}}
+                                    whileInView={{opacity: 1}}
+                                    transition={{delay: 1.6, duration: .8}}
+                                    viewport={{once: true}}
+                                >
+                                    <Image src={projects[i].img} alt={projects[i].alt} />
+                                </motion.div>
                             </motion.div>
-                            <div className="imgoverlay ovtwo"></div>
-                            <motion.div
+                            <motion.h2 
+                                className="text-2xl mt-6"
+                                initial={{opacity: 0, y: 20}}
+                                whileInView={{opacity: 1, y: 0}}
+                                viewport={{once: true, amount: .5}}
+                                transition={{duration: 1}}
+                            >
+                                {projects[i].title}
+                            </motion.h2>
+                            <motion.p 
+                                className="text mt-2 font-light"
                                 initial={{opacity: 0}}
                                 whileInView={{opacity: 1}}
-                                transition={{delay: 1.6, duration: .8}}
-                                viewport={{once: true}}
+                                viewport={{once: true, amount: .5}}
+                                transition={{duration: 1, delay: .5}}
                             >
-                                <Image src={blogrProj} alt="Blogr-project"/>
-                            </motion.div>
-                        </motion.div>
-                        <motion.h2 
-                            className="text-2xl mt-6"
-                            initial={{opacity: 0, y: 20}}
-                            whileInView={{opacity: 1, y: 0}}
-                            viewport={{once: true, amount: .5}}
-                            transition={{duration: 1}}
-                        >
-                            Blogr
-                        </motion.h2>
-                        <motion.p 
-                            className="text mt-2 font-light"
-                            initial={{opacity: 0}}
-                            whileInView={{opacity: 1}}
-                            viewport={{once: true, amount: .5}}
-                            transition={{duration: 1, delay: .5}}
-                        >
-                            {t.desc3}
-                        </motion.p>
-                    </div>
-                    <div className="project">
-                        <motion.div 
-                            className="imgg | relative"
-                            variants={clipPath}
-                            initial="hidden"
-                            whileInView="animate"
-                            viewport={{once: true}}
-                        >
-                            <motion.div 
-                                className="proj-overlay | absolute z-20"
-                                initial={{opacity: 0}}
-                                whileHover={{opacity: 1}}
-                            >
-                                <div className="flex items-center justify-center h-full gap-8">
-                                    <div className="button-bg rounded-full">
-                                        <Link href="https://github.com/alxcrudu/react-to-do-app" passHref={true} rel="noopener noreferrer" target="_blank">
-                                            <IconButton className="overlay-btn">
-                                                <AiFillGithub size={25}/>
-                                            </IconButton>
-                                        </Link>
-                                    </div>
-                                    <div className="button-bg rounded-full">
-                                        <IconButton className="overlay-btn">
-                                            <BsGlobe size={20}/>
-                                        </IconButton>
-                                    </div>
-                                </div>
-                            </motion.div>
-                            <div className="imgoverlay ovthree"></div>
-                            <motion.div
-                                initial={{opacity: 0}}
-                                whileInView={{opacity: 1}}
-                                transition={{delay: 1.6, duration: .8}}
-                                viewport={{once: true}}
-                            >
-                                <Image src={reactProj} alt="React-todo-project"/>
-                            </motion.div>
-                        </motion.div>
-                        <motion.h2 
-                            className="text-2xl mt-6"
-                            initial={{opacity: 0, y: 20}}
-                            whileInView={{opacity: 1, y: 0}}
-                            viewport={{once: true, amount: .5}}
-                            transition={{duration: 1}}
-                        >
-                            React to-do app
-                        </motion.h2>
-                        <motion.p 
-                            className="text mt-2 font-light"
-                            initial={{opacity: 0}}
-                            whileInView={{opacity: 1}}
-                            viewport={{once: true, amount: .5}}
-                            transition={{duration: 1, delay: .5}}
-                        >
-                            {t.desc1}
-                        </motion.p>
-                    </div>
+                                {projects[i].descr}
+                            </motion.p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

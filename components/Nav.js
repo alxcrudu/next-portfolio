@@ -74,7 +74,7 @@ export default function Nav() {
         <a href="#introduction__section">
           <Logo />
         </a>
-        <div className="right | flex items-center gap-10">
+        <div className="right | flex items-center md:gap-10">
             <ul className="nav__links | hidden gap-10 font-light md:flex">
                 <li className="text clickable"><a href="#introduction__section">{t.intro}</a></li>
                 <li className="text clickable"><a href="#projects__section">{t.proj}</a></li>

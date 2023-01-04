@@ -12,7 +12,7 @@ export default function About() {
   const { t } = useContext(LanguageContext);
 
   return (
-    <div className="container | mt-28" id="about__section">
+    <div className="container | mt-28 overflow-hidden" id="about__section">
       <div className="projects-container">
         <div className="projects-left">
           <motion.p 

@@ -11,7 +11,7 @@ export default function Menu() {
   const [moonShow, setMoonShow] = useState(false);
   const { t, locale, setLanguage } = useContext(LanguageContext);
   const { theme, changeTheme } = useContext(ThemeContext);
-  const { closeMenu } = useContext(MenuContext);
+  const { closeMenu, menuIsOpen } = useContext(MenuContext);
 
   useEffect(() => {
     if(theme === "dark") {
@@ -41,14 +41,22 @@ export default function Menu() {
     })
   };
 
-  window.addEventListener("resize", () => {
-    if(window.innerWidth > 768) closeMenu();
-  });
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if(window.innerWidth > 768) closeMenu();
+    });
+  })
 
   return (
-    <>
-      <div className="container">
-        <div className="side-menu fixed h-full z-10 w-1/2 right-0 flex flex-col items-center justify-between text-center md:hidden">
+    <AnimatePresence>
+      {menuIsOpen && (
+        <motion.div 
+          className="side-menu fixed h-full z-10 w-1/2 right-0 flex flex-col items-center justify-between text-center md:hidden"
+          initial={{x: "100%"}}
+          animate={{x: 0}}
+          exit={{x: "100%"}}
+          transition={{type: "tween"}}
+        >
           <ul className="nav__links | font-light mt-24">
             <li onClick={closeMenu} className="text-menu clickable mb-6">
               <a href="#introduction__section">{t.intro}</a>
@@ -108,8 +116,8 @@ export default function Menu() {
             <HiOutlineDownload size={15} />
           </button>
           </div>
-        </div>
-      </div>
-    </>
+        </motion.div>
+      )}
+    </AnimatePresence>
   )
 };

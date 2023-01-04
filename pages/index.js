@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeProvider";
-import { MenuContext } from "../context/MenuProvider";
 import Nav from "../components/Nav";
 import Introduction from "../components/Introduction";
 import Projects from "../components/Projects";
@@ -9,16 +8,9 @@ import Menu from "../components/Menu";
 import About from "../components/About";
 import Footer from "../components/Footer";
 
-// import dynamic from 'next/dynamic'
-
-// const DynamicIntro = dynamic(() => import("../components/Introduction"), {
-//   ssr: false,
-// })
-
 export default function Home() {
   const { theme } = useContext(ThemeContext);
-  const { menuIsOpen } = useContext(MenuContext);
-  // ! REMEMBER TO REACTIVATE STRICT MODE IN NEXT CONFIG AFTER DEVELOPMENT
+
   return (
     <>
       <Head>
@@ -33,12 +25,8 @@ export default function Home() {
       </Head>
       <main className={`app ${theme}`}>
         <Nav />
-        {menuIsOpen 
-          ? <Menu />
-          : <></>
-        }
+        <Menu />
         <Introduction />
-        {/* <DynamicIntro /> */}
         <Projects />
         <About />
         <Footer />
