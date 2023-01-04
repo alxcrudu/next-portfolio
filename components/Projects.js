@@ -20,7 +20,7 @@ export default function Projects() {
         img: shortlyProj,
         bg: "ovone",
         github: "https://github.com/alxcrudu/shortly-challenge",
-        live: "#",
+        live: "https://alxcrudu.github.io/shortly-challenge/",
         alt: "Shortly project image",
     },
     {
@@ -121,9 +121,11 @@ export default function Projects() {
                                             </Link>
                                         </div>
                                         <div className="button-bg rounded-full">
-                                            <IconButton className="overlay-btn">
-                                                <BsGlobe size={20}/>
-                                            </IconButton>
+                                            <Link href={projects[i].live} passHref={true} rel="noopener noreferrer" target="_blank">
+                                                <IconButton className="overlay-btn">
+                                                    <BsGlobe size={20}/>
+                                                </IconButton>
+                                            </Link>
                                         </div>
                                     </div>
                                 </motion.div>
