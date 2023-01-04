@@ -169,12 +169,14 @@ h1 {
   color: var(--text-menu);
 }
 
-.overlay-btn {
+.overlay-btn svg {
   color: var(--btn);
+  fill: var(--btn);
   transition: all ease-in-out .3s;
 }
-.overlay-btn:hover {
+.overlay-btn svg:hover {
   color: var(--btn-hover);
+  fill: var(--btn-hover);
 }
 
 .button {
@@ -406,6 +408,17 @@ min-width: 280px;
   -webkit-box-shadow: 1px 6px 18px -4px rgba(0,0,0,0.79);
   -moz-box-shadow: 1px 6px 18px -4px rgba(0,0,0,0.79);
 }
+
+.music-btn svg {
+  color: var(--text);
+  fill: var(--text);
+  transition: all ease-in-out .3s;
+}
+.music-btn svg:hover {
+  color: var(--text-hover);
+  fill: var(--text-hover);
+}
+
 
 .skill-illustration img {
   width: 100%;

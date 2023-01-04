@@ -21,7 +21,7 @@ export default function Menu() {
       setSunShow(false);
       setMoonShow(true);
     }
-  }, []);
+  }, []); // eslint-disable-line
   
   function toggleTheme() {
     setSunShow(!sunShow);

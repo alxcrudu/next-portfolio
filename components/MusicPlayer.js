@@ -155,17 +155,17 @@ export default function MusicPlayer() {
       </div>
       <div className="flex justify-center">
         <div className="controls flex gap-4 text">
-          <IconButton className="text" onClick={prevSong}>
-            <FaBackward size={18} />
+          <IconButton className="text music-btn" onClick={prevSong}>
+            <FaBackward className="text" size={18} />
           </IconButton>
-          <IconButton className="text" onClick={togglePlayPause}>
+          <IconButton className="text music-btn" onClick={togglePlayPause}>
             {isPlaying 
-              ? <BsPauseFill size={40} />
-              : <BsFillPlayFill size={40} />
+              ? <BsPauseFill className="text" size={40} />
+              : <BsFillPlayFill className="text" size={40} />
             }
           </IconButton>
-          <IconButton className="text" onClick={nextSong}>
-            <FaForward size={18} />
+          <IconButton className="text music-btn" onClick={nextSong}>
+            <FaForward className="text" size={18} />
           </IconButton>
         </div>
       </div>

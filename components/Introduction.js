@@ -22,7 +22,7 @@ export default function Introduction() {
   };
 
   const textReveal = {
-    hidden: { opacity: 0, y: 15 },
+    hidden: { opacity: 0, y: "10%" },
     visible: {
       opacity: 1,
       y: 0,
@@ -33,7 +33,7 @@ export default function Introduction() {
   };
   
   return (
-    <div className="container relative" id="introduction__section">
+    <div className="container relative test" id="introduction__section">
       <div className="even-columns | pt-36">
           <div className="flex justify-center items-start flex-col relative">
             <motion.h1
