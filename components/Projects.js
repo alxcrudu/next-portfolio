@@ -29,7 +29,7 @@ export default function Projects() {
         img: blogrProj,
         bg: "ovtwo",
         github: "https://github.com/alxcrudu/blogr-ui",
-        live: "#",
+        live: "https://alxcrudu.github.io/blogr-ui/",
         alt: "Blogr project image",
     },
     {
@@ -38,7 +38,7 @@ export default function Projects() {
         img: reactProj,
         bg: "ovthree",
         github: "https://github.com/alxcrudu/react-to-do-app",
-        live: "#",
+        live: "http://alxcrudu.github.io/react-to-do-app",
         alt: "To-do project image",
     },
   ];
