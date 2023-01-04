@@ -35,7 +35,7 @@ export default function Introduction() {
   return (
     <div className="container relative test" id="introduction__section">
       <div className="even-columns | pt-36">
-          <div className="flex justify-center items-start flex-col relative">
+          <div className="flex justify-center items-start flex-col">
             <motion.h1
               className="text-5xl md:text-5xl lg:text-7xl heading flex overlow-hidden flex-wrap"
               variants={staggerContainer}
@@ -44,7 +44,7 @@ export default function Introduction() {
             >
               {t.h1.split("").map((letter, i) => {
                 return (
-                  <motion.span key={letter + "-" + i} variants={textReveal}>
+                  <motion.span key={letter + "-" + i} variants={textReveal} className="relative">
                     {letter === " " ? "\u00A0" : letter}
                   </motion.span>
                 )
@@ -52,7 +52,7 @@ export default function Introduction() {
               <div className="w-full" />
               {t.h1b.split("").map((letter, i) => {
                 return (
-                  <motion.span key={letter + "-" + i} variants={textReveal}>
+                  <motion.span key={letter + "-" + i} variants={textReveal} className="relative">
                     {letter === " " ? "\u00A0" : letter}
                   </motion.span>
                 )
