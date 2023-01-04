@@ -228,7 +228,7 @@ min-width: 280px;
 .custom-selector select {
   border: none;
   background: none;
-  color: var(--text-menu);
+  color: var(--text);
   outline: none;
   cursor: pointer;
   appearance: none;
