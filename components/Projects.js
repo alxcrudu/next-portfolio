@@ -6,12 +6,33 @@ import { AiFillGithub } from "react-icons/ai";
 import { BsGlobe } from "react-icons/bs";
 import { IconButton } from "@mui/material";
 import { motion } from "framer-motion";
-import reactProj from "/assets/react.png";
-import shortlyProj from "/assets/shortly.jpg";
-import blogrProj from "/assets/blogr.jpg";
+import reactProj from "/assets/todo.png";
+import shortlyProj from "/assets/shortly.png";
+import blogrProj from "/assets/blogr.png";
 
 export default function Projects() {
   const { t } = useContext(LanguageContext);
+
+  const projects = [
+    {
+        title: "Shortly",
+        descr: t.desc3,
+        img: shortlyProj,
+        bg: "ovone",
+    },
+    {
+        title: "Blogr",
+        descr: t.desc2,
+        img: blogrProj,
+        bg: "ovtwo",
+    },
+    {
+        title: "React to-do app",
+        descr: t.desc1,
+        img: reactProj,
+        bg: "ovthree",
+    },
+  ];
 
   const clipPath = {
     hidden: {
@@ -96,14 +117,15 @@ export default function Projects() {
                                     </div>
                                 </div>
                             </motion.div>
-                            <motion.div 
-                                className="imgoverlay ovone"
-                                initial={{opacity: 1}}
-                                whileInView={{opacity: 0}}
+                            <div className="imgoverlay ovone"></div>
+                            <motion.div
+                                initial={{opacity: 0}}
+                                whileInView={{opacity: 1}}
                                 transition={{delay: 1.6, duration: .8}}
                                 viewport={{once: true}}
-                            ></motion.div>
-                            <Image src={shortlyProj} alt="Shortly-project"/>
+                            >
+                                <Image src={shortlyProj} alt="Shortly-project"/>
+                            </motion.div>
                         </motion.div>
                         <motion.h2 
                             className="text-2xl mt-6"
@@ -152,14 +174,15 @@ export default function Projects() {
                                     </div>
                                 </div>
                             </motion.div>
-                            <motion.div 
-                                className="imgoverlay ovtwo"
-                                initial={{opacity: 1}}
-                                whileInView={{opacity: 0}}
-                                transition={{delay: 1.8, duration: 1.3}}
+                            <div className="imgoverlay ovtwo"></div>
+                            <motion.div
+                                initial={{opacity: 0}}
+                                whileInView={{opacity: 1}}
+                                transition={{delay: 1.6, duration: .8}}
                                 viewport={{once: true}}
-                            ></motion.div>
-                            <Image src={blogrProj} alt="Blogr-project"/>
+                            >
+                                <Image src={blogrProj} alt="Blogr-project"/>
+                            </motion.div>
                         </motion.div>
                         <motion.h2 
                             className="text-2xl mt-6"
@@ -208,14 +231,15 @@ export default function Projects() {
                                     </div>
                                 </div>
                             </motion.div>
-                            <motion.div 
-                                className="imgoverlay ovthree"
-                                initial={{opacity: 1}}
-                                whileInView={{opacity: 0}}
-                                transition={{delay: 1.8, duration: 1.3}}
+                            <div className="imgoverlay ovthree"></div>
+                            <motion.div
+                                initial={{opacity: 0}}
+                                whileInView={{opacity: 1}}
+                                transition={{delay: 1.6, duration: .8}}
                                 viewport={{once: true}}
-                            ></motion.div>
-                            <Image src={reactProj} alt="React-todo-project"/>
+                            >
+                                <Image src={reactProj} alt="React-todo-project"/>
+                            </motion.div>
                         </motion.div>
                         <motion.h2 
                             className="text-2xl mt-6"
