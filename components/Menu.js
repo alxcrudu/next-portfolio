@@ -45,7 +45,7 @@ export default function Menu() {
     window.addEventListener("resize", () => {
       if(window.innerWidth > 768) closeMenu();
     });
-  })
+  }, []) // eslint-disable-line
 
   return (
     <AnimatePresence>
