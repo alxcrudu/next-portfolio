@@ -25,7 +25,7 @@ export default function About() {
             {t.abt}
           </motion.p>
         </div>
-        <div className="projects-right | md:ml-2">
+        <div className="projects-right | pb-10 md:ml-2">
           <div className="flex items-center">
             <p className="text | md:hidden font-light mr-6">{t.abt}</p>
             <motion.div 
