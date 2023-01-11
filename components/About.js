@@ -2,8 +2,8 @@ import { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { LanguageContext } from "../context/LanguageContext";
-import { SiNextdotjs, SiTailwindcss, SiFramer, SiFirebase, SiDocker } from "react-icons/si";
-import { SiAbletonlive } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiFramer, SiDocker, SiAbletonlive } from "react-icons/si";
+import { DiMongodb } from "react-icons/di";
 import { motion } from "framer-motion";
 import MusicPlayer from "../components/MusicPlayer";
 import skill from "/public/images/full2.png";
@@ -85,8 +85,8 @@ export default function About() {
                   <Link className="introduction-icon" href="https://www.framer.com/motion/" passHref={true} rel="noopener noreferrer" target="_blank">
                     <SiFramer size={25} alt="Framer-motion" />
                   </Link>
-                  <Link className="introduction-icon" href="https://firebase.google.com/" passHref={true} rel="noopener noreferrer" target="_blank">
-                    <SiFirebase size={25} alt="Firebase" />
+                  <Link className="introduction-icon" href="https://www.mongodb.com/" passHref={true} rel="noopener noreferrer" target="_blank">
+                    <DiMongodb size={25} alt="MongoDB" />
                   </Link>
                   <Link className="introduction-icon" href="https://www.docker.com/" passHref={true} rel="noopener noreferrer" target="_blank">
                     <SiDocker size={25} alt="Docker" />

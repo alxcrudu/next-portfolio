@@ -22,7 +22,7 @@ const ro = {
     d1: "Ma numesc Crudu Alexandru. Am 23 ani, locuiesc in Romania, si sunt developer full-stack.",
     d2: "Imi place evolutia continua in domeniu si sa experimentez cu noi framework-uri, librarii, tehnologii.",
     d4: "Am experienta cu: ",
-    d4s: "Node.js(express), React, Next, Firebase, Tailwind, Framer Motion, SCSS, Docker, Git, Jira si altele.",
+    d4s: "Node.js(express), React, Next, MongoDB, Tailwind, Framer Motion, SCSS, Docker, Git, Jira si altele.",
     d5: "Tehnologiile mele preferate (in acest moment):",
 // about2
     other: "A DOUA MEA PASIUNE",

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { LanguageContext } from "../context/LanguageContext";
 import { motion } from "framer-motion";
 import { BsArrowDownRight, BsMouse } from "react-icons/bs";
-import { SiNextdotjs, SiTailwindcss, SiAdobeillustrator, SiFramer } from "react-icons/si";
+import { SiNextdotjs, SiTailwindcss, SiAdobeillustrator, SiFramer, SiVercel } from "react-icons/si";
 import { IoIosArrowRoundDown } from 'react-icons/io';
 import Link from "next/link";
 import full from "/public/images/full.png";
@@ -91,6 +91,9 @@ export default function Introduction() {
               </Link>
               <Link className="introduction-icon" href="https://www.framer.com/motion/" passHref={true} rel="noopener noreferrer" target="_blank">
                 <SiFramer size={25} alt="Framer-motion" />
+              </Link>
+              <Link className="introduction-icon" href="https://vercel.com/" passHref={true} rel="noopener noreferrer" target="_blank">
+                <SiVercel size={25} alt="Vercel" />
               </Link>
             </motion.div>
             <a href="#projects__section">
