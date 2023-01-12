@@ -293,14 +293,23 @@ min-width: 280px;
   height: 100%;
   position: absolute;
 }
-.ovone {
+.ova {
   background: rgb(229, 229, 229);
 }
-.ovtwo {
+.ovb {
   background: rgb(175, 175, 175);
 }
-.ovthree {
+.ovc {
   background: rgb(134, 134, 134);
+}
+.ovd {
+  background: rgb(114, 114, 114);
+}
+.ove {
+  background: rgb(94, 94, 94);
+}
+.ovf {
+  background: rgb(74, 74, 74);
 }
 
 .project img {

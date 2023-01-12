@@ -16,6 +16,8 @@ const ro = {
     desc1: "Construita cu create-react-app, hooks, state & local storage.",
     desc2: "UI+API challenge de pe frontendmentor.io - SCSS, Javascript, Validator.js, FetchAPI",
     desc3: "UI challenge de pe frontendmentor.io - HTML, SCSS, Bootstrap, putin Javascript",
+    desc4: "Generator parola in javascript - copiere in clipboard, alege lungimea, simboluri etc.",
+    projtitle1: "Generator Parola",
 // about
     abt: "Despre",
     who: "CINE SUNT",

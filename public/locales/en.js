@@ -16,6 +16,8 @@ const en = {
     desc1: "Made with create-react-app, hooks, state & storing items in local storage.",
     desc2: "UI+API challenge from frontendmentor.io - SCSS, Javascript, Validator.js, FetchAPI",
     desc3: "UI challenge from frontendmentor.io - Used HTML, SCSS, Bootstrap, some Javascript",
+    desc4: "Javascript password generator - Copy to clipboard, choose length, symbols etc.",
+    projtitle1: "Password Generator",
 // about
     abt: "About",
     who: "WHO AM I",

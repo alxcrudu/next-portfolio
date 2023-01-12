@@ -6,19 +6,35 @@ import { AiFillGithub } from "react-icons/ai";
 import { BsGlobe } from "react-icons/bs";
 import { IconButton } from "@mui/material";
 import { motion } from "framer-motion";
-import reactProj from "/assets/todo.png";
-import shortlyProj from "/assets/shortly.png";
-import blogrProj from "/assets/blogr.png";
+import { images } from "../assets";
 
 export default function Projects() {
   const { t } = useContext(LanguageContext);
 
   const projects = [
     {
+        title: "React to-do app",
+        descr: t.desc1,
+        img: images.todo,
+        bg: "ova",
+        github: "https://github.com/alxcrudu/react-to-do-app",
+        live: "http://alxcrudu.github.io/react-to-do-app",
+        alt: "To-do project image",
+    },
+    {
+        title: t.projtitle1,
+        descr: t.desc4,
+        img: images.passGen,
+        bg: "ovb",
+        github: "https://github.com/alxcrudu/password-generator-app",
+        live: "https://alxcrudu.github.io/password-generator-app/",
+        alt: "To-do project image",
+    },
+    {
         title: "Shortly",
         descr: t.desc3,
-        img: shortlyProj,
-        bg: "ovone",
+        img: images.shortlyProj,
+        bg: "ovc",
         github: "https://github.com/alxcrudu/shortly-challenge",
         live: "https://alxcrudu.github.io/shortly-challenge/",
         alt: "Shortly project image",
@@ -26,20 +42,11 @@ export default function Projects() {
     {
         title: "Blogr",
         descr: t.desc2,
-        img: blogrProj,
-        bg: "ovtwo",
+        img: images.blogrProj,
+        bg: "ovd",
         github: "https://github.com/alxcrudu/blogr-ui",
         live: "https://alxcrudu.github.io/blogr-ui/",
         alt: "Blogr project image",
-    },
-    {
-        title: "React to-do app",
-        descr: t.desc1,
-        img: reactProj,
-        bg: "ovthree",
-        github: "https://github.com/alxcrudu/react-to-do-app",
-        live: "http://alxcrudu.github.io/react-to-do-app",
-        alt: "To-do project image",
     },
   ];
 
