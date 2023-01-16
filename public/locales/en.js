@@ -17,7 +17,7 @@ const en = {
     desc2: "UI+API challenge from frontendmentor.io - SCSS, Javascript, Validator.js, FetchAPI",
     desc3: "UI challenge from frontendmentor.io - Used HTML, SCSS, Bootstrap, some Javascript",
     desc4: "Javascript password generator - Copy to clipboard, choose length, symbols etc.",
-    desc5: "MERN CRUD Project built with the mern stack, react-beautiful-dnd, tailwind and more.",
+    desc5: "Built with the mern stack, react-beautiful-dnd, tailwind etc. Deployed on Cyclic.",
     projtitle1: "Password Generator",
 // about
     abt: "About",

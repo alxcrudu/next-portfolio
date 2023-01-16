@@ -17,7 +17,7 @@ const ro = {
     desc2: "UI+API challenge de pe frontendmentor.io - SCSS, Javascript, Validator.js, FetchAPI",
     desc3: "UI challenge de pe frontendmentor.io - HTML, SCSS, Bootstrap, putin Javascript",
     desc4: "Generator parola in javascript - copiere in clipboard, alege lungimea, simboluri etc.",
-    desc5: "Proiect MERN CRUD construit cu stack-ul mern, react-beautiful-dnd, tailwind etc.",
+    desc5: "Construit cu stack-ul mern, react-beautiful-dnd, tailwind etc. Gazduit pe Cyclic.",
     projtitle1: "Generator Parola",
 // about
     abt: "Despre",
