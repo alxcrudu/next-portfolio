@@ -13,12 +13,12 @@ const ro = {
 // projects
     proj2: "Proiecte",
     allproj: "Toate proiectele mele",
-    desc1: "Construita cu create-react-app, hooks, state & local storage.",
+    desc1: "Construita cu create-react-app, local storage.",
     desc2: "UI+API challenge de pe frontendmentor.io - SCSS, Javascript, Validator.js, FetchAPI",
     desc3: "UI challenge de pe frontendmentor.io - HTML, SCSS, Bootstrap, putin Javascript",
     desc4: "Generator parola in javascript - copiere in clipboard, alege lungimea, simboluri etc.",
-    desc5: "Construit cu stack-ul mern, react-beautiful-dnd, tailwind etc. Gazduit pe Cyclic.",
-    projtitle1: "Generator Parola",
+    desc5: "MERN stack, react-beautiful-dnd, tailwind etc. Gazduit pe Cyclic.",
+    desc6: "MERN stack, MUI, framer-motion, diagrame antd, tailwind etc. Gazduit pe Cyclic.",
 // about
     abt: "Despre",
     who: "CINE SUNT",

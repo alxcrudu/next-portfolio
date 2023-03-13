@@ -13,12 +13,12 @@ const en = {
 // projects
     proj2: "Projects",
     allproj: "All my projects",
-    desc1: "Made with create-react-app, hooks, state & storing items in local storage.",
-    desc2: "UI+API challenge from frontendmentor.io - SCSS, Javascript, Validator.js, FetchAPI",
-    desc3: "UI challenge from frontendmentor.io - Used HTML, SCSS, Bootstrap, some Javascript",
+    desc1: "Made with create-react-app, storing items in local storage.",
+    desc2: "UI+API challenge from frontendmentor.io - SCSS, Javascript, Validator.js, FetchAPI.",
+    desc3: "UI challenge from frontendmentor.io - Used HTML, SCSS, Bootstrap, some Javascript.",
     desc4: "Javascript password generator - Copy to clipboard, choose length, symbols etc.",
-    desc5: "Built with the mern stack, react-beautiful-dnd, tailwind etc. Deployed on Cyclic.",
-    projtitle1: "Password Generator",
+    desc5: "MERN stack, react-beautiful-dnd, tailwind etc. Deployed on Cyclic.",
+    desc6: "MERN stack, MUI, framer-motion, antd charts tailwind etc. Deployed on Cyclic.",
 // about
     abt: "About",
     who: "WHO AM I",

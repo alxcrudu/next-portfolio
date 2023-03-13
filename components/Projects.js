@@ -13,10 +13,19 @@ export default function Projects() {
 
   const projects = [
     {
+        title: "MERN Invoice app",
+        descr: t.desc6,
+        img: images.invoice,
+        bg: "ova",
+        github: "https://github.com/alxcrudu/mern-invoice-app",
+        live: "https://fine-erin-gosling-boot.cyclic.app/",
+        alt: "To-do project image",
+    },
+    {
         title: "MERN CRUD Kanban",
         descr: t.desc5,
         img: images.kanban,
-        bg: "ova",
+        bg: "ovb",
         github: "https://github.com/alxcrudu/mern-crud-kanban",
         live: "https://sore-erin-goat-wig.cyclic.app/",
         alt: "To-do project image",
@@ -25,13 +34,13 @@ export default function Projects() {
         title: "React to-do app",
         descr: t.desc1,
         img: images.todo,
-        bg: "ovb",
+        bg: "ovc",
         github: "https://github.com/alxcrudu/react-to-do-app",
         live: "http://alxcrudu.github.io/react-to-do-app",
         alt: "To-do project image",
     },
     {
-        title: t.projtitle1,
+        title: "Password generator",
         descr: t.desc4,
         img: images.passGen,
         bg: "ovc",
