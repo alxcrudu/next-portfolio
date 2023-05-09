@@ -13,10 +13,7 @@ const en = {
 // projects
     proj2: "Projects",
     allproj: "All my projects",
-    desc1: "Made with create-react-app, storing items in local storage.",
-    desc2: "UI+API challenge from frontendmentor.io - SCSS, Javascript, Validator.js, FetchAPI.",
-    desc3: "UI challenge from frontendmentor.io - Used HTML, SCSS, Bootstrap, some Javascript.",
-    desc4: "Javascript password generator - Copy to clipboard, choose length, symbols etc.",
+    desc1: "Typescript, next.js, prisma, tRPC, react-query, supabase, tailwind, daisyUI, next-auth, vercel",
     desc5: "MERN stack, react-beautiful-dnd, tailwind etc. Deployed on Cyclic.",
     desc6: "MERN stack, MUI, framer-motion, antd charts tailwind etc. Deployed on Cyclic.",
 // about
@@ -25,7 +22,7 @@ const en = {
     d1: "My name is Crudu Alexandru. I am 23 years old, I live in Romania, and I`m a full-stack developer.",
     d2: "I enjoy the constant change in the technologies used in the area and love diving into new frameworks, libraries and technologies.",
     d4: "I`m experienced with: ",
-    d4s: "Node.js(express), React, Next, MongoDB, Tailwind, Framer Motion, SCSS, Docker, Git, Jira and more.",
+    d4s: "Typescript, Node.js, React, Next.js, Testing (unit, integration, e2e), ORMs (prisma, sequalize), Docker, AWS, Git and more.",
     d5: "Tech I currently enjoy a lot:",
 // about2
     other: "MY OTHER BIG PASSION",
