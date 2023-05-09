@@ -26,7 +26,7 @@ export default function Footer() {
             <a className="md:hidden mr-3 w-6" href="#introduction__section">
               <Logo />
             </a>
-            <p className="text copyright-text">©{year} Crudu Alexandru.</p>
+            <p className="text copyright-text">©{year} Crudu Alexandru. Last updated: 09.05.2023</p>
           </div>
           <div className="flex items-center justify-center flex-col md:flex-row">
           <Link className="flex text clickable mb-4 md:mb-0" href="mailto:alexcruducode@gmail.com">

@@ -31,41 +31,14 @@ export default function Projects() {
         alt: "To-do project image",
     },
     {
-        title: "React to-do app",
+        title: "T3 To-do app",
         descr: t.desc1,
         img: images.todo,
         bg: "ovc",
-        github: "https://github.com/alxcrudu/react-to-do-app",
-        live: "http://alxcrudu.github.io/react-to-do-app",
+        github: "https://github.com/alxcrudu/to-do-t3",
+        live: "https://to-do-t3.vercel.app/",
         alt: "To-do project image",
-    },
-    {
-        title: "Password generator",
-        descr: t.desc4,
-        img: images.passGen,
-        bg: "ovc",
-        github: "https://github.com/alxcrudu/password-generator-app",
-        live: "https://alxcrudu.github.io/password-generator-app/",
-        alt: "To-do project image",
-    },
-    {
-        title: "Shortly",
-        descr: t.desc3,
-        img: images.shortlyProj,
-        bg: "ovb",
-        github: "https://github.com/alxcrudu/shortly-challenge",
-        live: "https://alxcrudu.github.io/shortly-challenge/",
-        alt: "Shortly project image",
-    },
-    {
-        title: "Blogr",
-        descr: t.desc2,
-        img: images.blogrProj,
-        bg: "ova",
-        github: "https://github.com/alxcrudu/blogr-ui",
-        live: "https://alxcrudu.github.io/blogr-ui/",
-        alt: "Blogr project image",
-    },
+    }
   ];
 
   const clipPath = {

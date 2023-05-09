@@ -2,8 +2,8 @@ import { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { LanguageContext } from "../context/LanguageContext";
-import { SiNextdotjs, SiTailwindcss, SiFramer, SiDocker, SiAbletonlive } from "react-icons/si";
-import { DiMongodb } from "react-icons/di";
+import { SiNextdotjs, SiFramer, SiDocker, SiAbletonlive, SiSupabase, SiTypescript } from "react-icons/si";
+import { FaAws } from 'react-icons/fa'
 import { motion } from "framer-motion";
 import MusicPlayer from "../components/MusicPlayer";
 import skill from "/public/images/full2.png";
@@ -76,20 +76,23 @@ export default function About() {
                   viewport={{once: true}}
                   transition={{duration: 1, delay: .6}}
                 >
+                  <Link className="introduction-icon" href="https://www.typescriptlang.org/" passHref={true} rel="noopener noreferrer" target="_blank">
+                    <SiTypescript size={25} alt="Typescript" />
+                  </Link>
                   <Link className="introduction-icon" href="https://nextjs.org/" passHref={true} rel="noopener noreferrer" target="_blank">
                     <SiNextdotjs size={25} alt="Next.js" />
                   </Link>
-                  <Link className="introduction-icon" href="https://tailwindcss.com/" passHref={true} rel="noopener noreferrer" target="_blank">
-                    <SiTailwindcss size={25} alt="Tailwind-css" />
+                  <Link className="introduction-icon" href="https://www.docker.com/" passHref={true} rel="noopener noreferrer" target="_blank">
+                    <SiDocker size={25} alt="Docker" />
+                  </Link>
+                  <Link className="introduction-icon" href="https://aws.amazon.com/" passHref={true} rel="noopener noreferrer" target="_blank">
+                    <FaAws size={25} alt="AWS" />
+                  </Link>
+                  <Link className="introduction-icon" href="https://supabase.com/" passHref={true} rel="noopener noreferrer" target="_blank">
+                    <SiSupabase size={25} alt="Supabase" />
                   </Link>
                   <Link className="introduction-icon" href="https://www.framer.com/motion/" passHref={true} rel="noopener noreferrer" target="_blank">
                     <SiFramer size={25} alt="Framer-motion" />
-                  </Link>
-                  <Link className="introduction-icon" href="https://www.mongodb.com/" passHref={true} rel="noopener noreferrer" target="_blank">
-                    <DiMongodb size={25} alt="MongoDB" />
-                  </Link>
-                  <Link className="introduction-icon" href="https://www.docker.com/" passHref={true} rel="noopener noreferrer" target="_blank">
-                    <SiDocker size={25} alt="Docker" />
                   </Link>
                 </motion.div>
             </div>
