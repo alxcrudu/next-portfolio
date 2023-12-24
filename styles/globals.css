@@ -92,6 +92,7 @@ li {
 
 .app.dark {
   --text: #7c7c7c;
+  --text-invert: #171717;
   --text-menu: #7c7c7c;
   --bg: #171717;
   --accent: #d9d9d9;
@@ -100,13 +101,14 @@ li {
   --nav-bg: rgba(0, 0, 0, 0.4);
   --menu-bg: rgba(0, 0, 0, 0.5);
   --menu-border: rgba(0, 0, 0, 0.3);
-  --player-bg: rgba(255,255,255,0.05);
-  --slider-progress: rgba(255,255,255,0.3);
+  --player-bg: rgba(255, 255, 255, 0.05);
+  --slider-progress: rgba(255, 255, 255, 0.3);
   --btn: #7c7c7c;
   --btn-hover: #d9d9d9;
 }
 .app.light {
   --text: #171717;
+  --text-invert: #dfdfdf;
   --text-menu: #7c7c7c;
   --bg: #d9d9d9;
   --accent: #5c5c5c;
@@ -115,19 +117,19 @@ li {
   --nav-bg: rgba(255, 255, 255, 0.2);
   --menu-bg: rgba(255, 255, 255, 0.4);
   --menu-border: rgba(255, 255, 255, 0.3);
-  --player-bg: rgba(255,255,255,0.5);
-  --slider-progress: rgba(0,0,0,0.3);
+  --player-bg: rgba(255, 255, 255, 0.5);
+  --slider-progress: rgba(0, 0, 0, 0.3);
   --btn: #7c7c7c;
   --btn-hover: #d9d9d9;
 }
 
 .app {
   background: var(--bg);
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out 0.3s;
 }
 
 .clickable {
-  transition: color ease .2s;
+  transition: color ease 0.2s;
 }
 .clickable:hover {
   color: var(--text-hover);
@@ -140,7 +142,7 @@ h1 {
   color: var(--heading);
 }
 .project h2 {
-  color: var(--heading)
+  color: var(--heading);
 }
 .song-name {
   color: var(--heading);
@@ -148,7 +150,7 @@ h1 {
 
 .text {
   color: var(--text);
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out 0.3s;
 }
 .text-menu {
   color: var(--text-menu);
@@ -157,7 +159,7 @@ h1 {
 .overlay-btn svg {
   color: var(--btn);
   fill: var(--btn);
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out 0.3s;
 }
 .overlay-btn svg:hover {
   color: var(--btn-hover);
@@ -169,10 +171,10 @@ h1 {
   border: solid 1.5px var(--text);
   text-align: center;
   vertical-align: middle;
-  transition: all ease-in-out .2s;
+  transition: all ease-in-out 0.2s;
 }
 .button:hover {
-  border: solid 1.5px var(--heading)
+  border: solid 1.5px var(--heading);
 }
 
 .button-menu {
@@ -180,7 +182,7 @@ h1 {
   border: solid 1.5px var(--text-menu);
   text-align: center;
   vertical-align: middle;
-  transition: all ease-in-out .2s;
+  transition: all ease-in-out 0.2s;
 }
 .button-menu:hover {
   border: solid 1.5px var(--text-hover);
@@ -201,11 +203,14 @@ h1 {
   width: 100%;
 }
 
+.nav-bg {
+  transition: all ease-in-out 0.3s;
+}
+
 .nav-bg-visible {
-  -webkit-box-shadow: 0px 7px 68px -14px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px 7px 68px -14px rgba(0,0,0,0.3);
-  box-shadow: 0px 7px 68px -14px rgba(0,0,0,0.3);
-  transition: all ease-in-out .3s;
+  -webkit-box-shadow: 0px 7px 68px -14px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 7px 68px -14px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 7px 68px -14px rgba(0, 0, 0, 0.3);
   /* From https://css.glass */
   background: var(--nav-bg);
   border-radius: 0 0 16px 16px;
@@ -215,14 +220,14 @@ h1 {
 }
 
 .side-menu {
-/* From https://css.glass */
-background: var(--menu-bg);
-border-radius: 16px 0 0 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(9.9px);
--webkit-backdrop-filter: blur(9.9px);
-border: 1px solid var(--menu-border);
-min-width: 280px;
+  /* From https://css.glass */
+  background: var(--menu-bg);
+  border-radius: 16px 0 0 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+  border: 1px solid var(--menu-border);
+  min-width: 280px;
 }
 
 .custom-selector select {
@@ -248,7 +253,7 @@ min-width: 280px;
 
 .introduction-icon {
   color: var(--text);
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out 0.3s;
 }
 .introduction-icon:hover {
   color: var(--text-hover);
@@ -342,7 +347,7 @@ min-width: 280px;
 }
 
 .button-bg {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   height: 3em;
   width: 3em;
   display: grid;
@@ -359,12 +364,12 @@ min-width: 280px;
   background: var(--player-bg);
   width: clamp(200px, 350px, 100%);
   height: min-content;
-  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
-  -webkit-box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
 }
 .song-info {
-  white-space: nowrap; 
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -372,14 +377,14 @@ min-width: 280px;
 .slider-progress {
   appearance: none;
   width: 100%;
-  height: .25em;
+  height: 0.25em;
   border-radius: 5em;
   background-color: var(--slider-progress);
 }
 .slider-progress::-webkit-slider-thumb {
   appearance: none;
-  width: .6em;
-  height: .6em;
+  width: 0.6em;
+  height: 0.6em;
   background: var(--text);
   border-radius: 10em;
   cursor: pointer;
@@ -387,7 +392,7 @@ min-width: 280px;
 .slider-volume {
   appearance: none;
   width: 100%;
-  height: .25em;
+  height: 0.25em;
   border-radius: 5em;
   background-color: var(--slider-progress);
 }
@@ -398,21 +403,20 @@ min-width: 280px;
   background: white;
   border-radius: 10em;
   cursor: pointer;
-  box-shadow: 1px 6px 18px -4px rgba(0,0,0,0.79);
-  -webkit-box-shadow: 1px 6px 18px -4px rgba(0,0,0,0.79);
-  -moz-box-shadow: 1px 6px 18px -4px rgba(0,0,0,0.79);
+  box-shadow: 1px 6px 18px -4px rgba(0, 0, 0, 0.79);
+  -webkit-box-shadow: 1px 6px 18px -4px rgba(0, 0, 0, 0.79);
+  -moz-box-shadow: 1px 6px 18px -4px rgba(0, 0, 0, 0.79);
 }
 
 .music-btn svg {
   color: var(--text);
   fill: var(--text);
-  transition: all ease-in-out .3s;
+  transition: all ease-in-out 0.3s;
 }
 .music-btn svg:hover {
   color: var(--text-hover);
   fill: var(--text-hover);
 }
-
 
 .skill-illustration img {
   width: 100%;
@@ -422,4 +426,26 @@ min-width: 280px;
 
 .accent-text {
   color: var(--slider-progress);
+}
+
+::-moz-selection {
+  color: white;
+  background: #1f1f1f;
+}
+
+::selection {
+  color: white;
+  background: #1f1f1f;
+}
+
+.formField {
+  border-color: var(--text) !important;
+}
+.formField:focus {
+  outline: none !important;
+  border-color: var(--text-hover) !important;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
 }

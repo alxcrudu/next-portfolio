@@ -57,17 +57,7 @@ export default function Menu() {
           exit={{x: "100%"}}
           transition={{type: "tween"}}
         >
-          <ul className="nav__links | font-light mt-24">
-            <li onClick={closeMenu} className="text-menu clickable mb-6">
-              <a href="#introduction__section">{t.intro}</a>
-            </li>
-            <li onClick={closeMenu} className="text-menu clickable mb-6">
-              <a href="#projects__section">{t.proj}</a>
-            </li>
-            <li onClick={closeMenu} className="text-menu clickable mb-6">
-              <a href="#about__section">{t.about}</a>
-            </li>
-          </ul>
+          <aside />
           <div className="mb-12">
           <div className="theme-div text-menu | cursor-pointer flex flex-col items-center mb-6">
             <label className="custom-selector | mb-6 clickable">
