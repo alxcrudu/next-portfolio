@@ -1,6 +1,4 @@
-import { useContext } from "react";
 import Image from "next/image";
-import { LanguageContext } from "../context/LanguageContext";
 import { motion } from "framer-motion";
 import { BsArrowDownRight, BsMouse } from "react-icons/bs";
 import { SiNextdotjs, SiTailwindcss, SiAdobeillustrator, SiFramer, SiVercel } from "react-icons/si";
@@ -8,8 +6,10 @@ import { IoIosArrowRoundDown } from 'react-icons/io';
 import Link from "next/link";
 import full from "/public/images/full.png";
 
+import { useTranslation } from 'next-i18next'
+
 export default function Introduction() {
-  const { t } = useContext(LanguageContext);
+  const { t } = useTranslation('common');
 
   const staggerContainer = {
     hidden: { opacity: 1 },
@@ -42,7 +42,7 @@ export default function Introduction() {
               initial="hidden"
               animate="visible"
             >
-              {t.h1.split("").map((letter, i) => {
+              {t("h1").split("").map((letter, i) => {
                 return (
                   <motion.span key={letter + "-" + i} variants={textReveal} className="relative">
                     {letter === " " ? "\u00A0" : letter}
@@ -50,7 +50,7 @@ export default function Introduction() {
                 )
               })}
               <div className="w-full" />
-              {t.h1b.split("").map((letter, i) => {
+              {t("h1b").split("").map((letter, i) => {
                 return (
                   <motion.span key={letter + "-" + i} variants={textReveal} className="relative">
                     {letter === " " ? "\u00A0" : letter}
@@ -64,7 +64,7 @@ export default function Introduction() {
               animate={{opacity: 1}}
               transition={{delay: 1.5, duration: 1}}
             >
-              {t.iam}
+              {t("iam")}
             </motion.p>
             <motion.p 
               className="text pt-12 font-light"
@@ -72,7 +72,7 @@ export default function Introduction() {
               animate={{opacity: 1}}
               transition={{delay: 1.7, duration: 1}}
             >
-              {t.tech1}
+              {t("tech1")}
             </motion.p>
             <motion.div 
               className="introduction-icons | flex gap-4 mt-2"
@@ -103,7 +103,7 @@ export default function Introduction() {
                 animate={{opacity: 1}}
                 transition={{delay: 2.2, duration: 1}}
               >
-                {t.check}
+                {t("check")}
                   <motion.span 
                     className="pl-4 pt-1" 
                     initial={{y: 0, x: 0}}

@@ -1,20 +1,19 @@
-import { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { LanguageContext } from "../context/LanguageContext";
 import { AiFillGithub } from "react-icons/ai";
 import { BsGlobe } from "react-icons/bs";
 import { IconButton } from "@mui/material";
 import { motion } from "framer-motion";
 import { images } from "../assets";
+import { useTranslation } from "next-i18next";
 
 export default function Projects() {
-  const { t } = useContext(LanguageContext);
+  const { t } = useTranslation('common');
 
   const projects = [
     {
         title: "MERN Invoice app",
-        descr: t.desc6,
+        descr: t("desc6"),
         img: images.invoice,
         bg: "ova",
         github: "https://github.com/alxcrudu/mern-invoice-app",
@@ -23,7 +22,7 @@ export default function Projects() {
     },
     {
         title: "MERN CRUD Kanban",
-        descr: t.desc5,
+        descr: t("desc5"),
         img: images.kanban,
         bg: "ovb",
         github: "https://github.com/alxcrudu/mern-crud-kanban",
@@ -32,7 +31,7 @@ export default function Projects() {
     },
     {
         title: "T3 To-do app",
-        descr: t.desc1,
+        descr: t("desc1"),
         img: images.todo,
         bg: "ovc",
         github: "https://github.com/alxcrudu/to-do-t3",
@@ -66,7 +65,7 @@ export default function Projects() {
                     whileInView={{opacity: 1}}
                     viewport={{once: true}}
                     transition={{duration: 1, delay: 2}}
-                >{t.proj2}</motion.p>
+                >{t("proj2")}</motion.p>
                 <div className="hidden md:flex w-full justify-start mt-24">
                     <Link href="https://github.com/alxcrudu" passHref={true} rel="noopener noreferrer" target="_blank">
                         <motion.h2 
@@ -76,7 +75,7 @@ export default function Projects() {
                             viewport={{once: true, amount: .3}}
                             transition={{duration: 1, delay: 1.1}}
                         >
-                            {t.allproj}
+                            {t("allproj")}
                             <span className="mt-2">
                                 <AiFillGithub size={25}/>
                             </span>
@@ -86,7 +85,7 @@ export default function Projects() {
             </div>
             <div className="projects-right | md:ml-2">
                 <div className="flex items-center">
-                    <p className="text | md:hidden font-light mr-6">{t.proj2}</p>
+                    <p className="text | md:hidden font-light mr-6">{t("proj2")}</p>
                     <motion.div 
                         className="division-line | w-full opacity-40 md:mt-3"
                         initial={{opacity: 0}}

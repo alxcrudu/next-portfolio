@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { LanguageContext } from "../context/LanguageContext";
 import {
   SiNextdotjs,
   SiFramer,
@@ -12,11 +10,11 @@ import {
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { motion } from "framer-motion";
-import MusicPlayer from "../components/MusicPlayer";
 import skill from "/public/images/full2.png";
+import { useTranslation } from "next-i18next";
 
 export default function About() {
-  const { t } = useContext(LanguageContext);
+  const { t } = useTranslation('common');
 
   return (
     <div className="container | mt-28 overflow-hidden" id="about__section">
@@ -29,12 +27,12 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            {t.abt}
+            {t("abt")}
           </motion.p>
         </div>
         <div className="projects-right | pb-10 md:ml-2">
           <div className="flex items-center">
-            <p className="text | md:hidden font-light mr-6">{t.abt}</p>
+            <p className="text | md:hidden font-light mr-6">{t("abt")}</p>
             <motion.div
               className="division-line | w-full opacity-40 md:mt-3"
               initial={{ opacity: 0 }}
@@ -52,7 +50,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.3 }}
               >
-                {t.who}
+                {t("who")}
               </motion.h2>
               <motion.p
                 className="text font-light"
@@ -61,21 +59,16 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.4 }}
               >
-                {/* {t.d1}
-                <br /><br />
-                {t.d2}
-                <br /><br />
-                {t.d4}<span className="font-normal">{t.d4s}</span> */}
-                {t.about_description_1}
+                {t("about_description_1")}
                 <br />
                 <br />
-                {t.about_description_2}
+                {t("about_description_2")}
                 <br />
                 <br />
-                {t.about_description_3}
+                {t("about_description_3")}
                 <br />
                 <br />
-                {t.about_description_4}
+                {t("about_description_4")}
                 <br />
                 <br />
               </motion.p>
@@ -86,7 +79,7 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-                {t.d5}
+                {t("d5")}
               </motion.p>
               <motion.div
                 className="introduction-icons | flex gap-4 mt-2"

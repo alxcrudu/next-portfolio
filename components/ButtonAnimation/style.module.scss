@@ -10,7 +10,7 @@
   overflow: hidden;
   width: min-content;
   transition: color 0.4s linear;
-
+  color: var(--text);
   p {
     position: relative;
     z-index: 1;

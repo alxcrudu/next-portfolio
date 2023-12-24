@@ -1,6 +1,5 @@
-import { useState, useRef, useEffect, useContext } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { LanguageContext } from "../context/LanguageContext";
 import { BsFillPlayFill, BsPauseFill } from "react-icons/bs";
 import { FaBackward, FaForward } from "react-icons/fa";
 import { MdVolumeDownAlt, MdVolumeUp } from "react-icons/md";
@@ -16,7 +15,6 @@ export default function MusicPlayer() {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [volume, setVolume] = useState(10);
-  const { t } = useContext(LanguageContext);
 
   const audio = useRef();
   const progressBar = useRef();

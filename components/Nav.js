@@ -1,20 +1,19 @@
 import { useRef, useEffect, useContext, useCallback, useState } from "react";
 import { ThemeContext } from "../context/ThemeProvider";
 import { MenuContext } from "../context/MenuProvider";
-import { LanguageContext } from "../context/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { TbMoon, TbSun } from "react-icons/tb";
 import { HiOutlineDownload } from "react-icons/hi";
 import { CgMenuMotion, CgClose } from "react-icons/cg";
 import Logo from "../components/Logo";
 import ButtonAnimation from "./ButtonAnimation";
+import LangSwitcher from "./LangSwitcher";
 
 export default function Nav() {
   const [sunShow, setSunShow] = useState(false);
   const [moonShow, setMoonShow] = useState(false);
   const { theme, changeTheme } = useContext(ThemeContext);
   const { menuIsOpen, toggleMenu } = useContext(MenuContext);
-  const { locale, setLanguage } = useContext(LanguageContext);
 
   const myNav = useRef();
 
@@ -77,14 +76,7 @@ export default function Nav() {
         <div className="right | flex items-center md:gap-10">
           <div className="theme-div text | hidden cursor-pointer md:flex items-center">
             <label className="custom-selector | mr-8">
-              <select
-                onChange={setLanguage}
-                defaultValue={locale}
-                className="clickable"
-              >
-                <option value="en">EN</option>
-                <option value="ro">RO</option>
-              </select>
+              <LangSwitcher />
             </label>
             <div className="clickable toggle-icons" onClick={toggleTheme}>
               <AnimatePresence>

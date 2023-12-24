@@ -1,17 +1,18 @@
 import { useContext, useState, useEffect } from "react";
-import { LanguageContext } from "../context/LanguageContext";
 import { ThemeContext } from "../context/ThemeProvider";
 import { MenuContext } from "../context/MenuProvider";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineDownload } from "react-icons/hi";
 import { TbMoon, TbSun } from "react-icons/tb";
+import { useTranslation } from "next-i18next";
 
 export default function Menu() {
   const [sunShow, setSunShow] = useState(false);
   const [moonShow, setMoonShow] = useState(false);
-  const { t, locale, setLanguage } = useContext(LanguageContext);
   const { theme, changeTheme } = useContext(ThemeContext);
   const { closeMenu, menuIsOpen } = useContext(MenuContext);
+
+  const { t } = useTranslation('common');
 
   useEffect(() => {
     if(theme === "dark") {
@@ -102,7 +103,7 @@ export default function Menu() {
             onClick={saveFile}
             className="button-menu clickable text-menu | rounded-full px-4 py-2 flex justify-center items-center"
           >
-            <span className="leading-none">{t.download}</span>
+            <span className="leading-none">{t("download")}</span>
             <HiOutlineDownload size={15} />
           </button>
           </div>

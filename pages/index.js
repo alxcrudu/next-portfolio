@@ -10,6 +10,8 @@ import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import InfiniteLogoSlider from "../components/InfiniteLogoSlider";
 
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
 export default function Home() {
   const { theme } = useContext(ThemeContext);
 
@@ -51,4 +53,14 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        'common',
+      ])),
+    },
+  }
 }

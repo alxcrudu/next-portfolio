@@ -3,7 +3,8 @@ import { useEffect } from "react";
 
 import { ThemeProvider } from "../context/ThemeProvider";
 import { MenuProvider } from "../context/MenuProvider";
-import { LanguageProvider } from "../context/LanguageContext";
+
+import { appWithTranslation } from "next-i18next";
 
 import { SnackbarProvider } from "notistack";
 
@@ -13,7 +14,7 @@ import { Epilogue } from "@next/font/google";
 
 const epilogue = Epilogue({ subsets: ["latin"] });
 
-export default function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   const lenis = useLenis();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,20 +29,20 @@ export default function App({ Component, pageProps }) {
         horizontal: "center",
       }}
     >
-      <LanguageProvider>
-        <MenuProvider>
-          <ThemeProvider>
-            <style jsx global>{`
-              * {
-                font-family: ${epilogue.style.fontFamily};
-              }
-            `}</style>
-            <ReactLenis root>
-              <Component {...pageProps} />
-            </ReactLenis>
-          </ThemeProvider>
-        </MenuProvider>
-      </LanguageProvider>
+      <MenuProvider>
+        <ThemeProvider>
+          <style jsx global>{`
+            * {
+              font-family: ${epilogue.style.fontFamily};
+            }
+          `}</style>
+          <ReactLenis root>
+            <Component {...pageProps} />
+          </ReactLenis>
+        </ThemeProvider>
+      </MenuProvider>
     </SnackbarProvider>
   );
-}
+};
+
+export default appWithTranslation(App);

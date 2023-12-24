@@ -40,7 +40,7 @@ export default function ButtonAnimation({
   return (
     <div
       className={styles.roundedButton}
-      style={{ overflow: "hidden" }}
+      // className="rounded-[3em] border-[2px] border-[var(--text)] cursor-pointer relative flex items-center justify-center py-2 px-4 overflow-hidden w-min transition-color"
       onMouseEnter={() => {
         manageMouseEnter();
       }}
@@ -54,6 +54,7 @@ export default function ButtonAnimation({
         ref={circle}
         style={{ backgroundColor }}
         className={styles.circle}
+        // className={`w-full h-[150%] absolute rounded-[50%] top-[100%]`}
       ></div>
     </div>
   );

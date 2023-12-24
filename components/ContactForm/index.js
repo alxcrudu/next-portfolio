@@ -18,9 +18,9 @@ import axios from "axios";
 import { cn } from "../../helpers/cn";
 
 import * as styles from "./styles";
-import { LanguageContext } from "../../context/LanguageContext";
 import { ThemeContext } from "../../context/ThemeProvider";
 import ButtonAnimation from "../ButtonAnimation";
+import { useTranslation } from "next-i18next";
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),
@@ -35,7 +35,7 @@ const schema = yup.object().shape({
 const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
-  const { t } = useContext(LanguageContext);
+  const { t } = useTranslation('common');
   const { theme } = useContext(ThemeContext);
 
   const recaptchaRef = useRef(null);
@@ -82,7 +82,7 @@ const ContactForm = () => {
 
   const onReCAPTCHAChange = (captchaCode) => {
     if (!captchaCode) {
-      return enqueueSnackbar(t.captcha_error, {
+      return enqueueSnackbar(t("captcha_error"), {
         variant: "warning",
         style: { maxWidth: 400 },
       });
@@ -104,12 +104,12 @@ const ContactForm = () => {
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
-            {t.contact}
+            {t("contact")}
           </motion.p>
         </div>
         <div className="projects-right | md:ml-2">
           <div className="flex items-center mb-24">
-            <p className="text | md:hidden font-light mr-6">{t.abt}</p>
+            <p className="text | md:hidden font-light mr-6">{t("abt")}</p>
             <motion.div
               className="division-line | w-full opacity-40 md:mt-3"
               initial={{ opacity: 0 }}
@@ -126,13 +126,13 @@ const ContactForm = () => {
               viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.4 }}
             >
-              <h1 className="heading | text-4xl">{t.contact_me}</h1>
+              <h1 className="heading | text-4xl">{t("contact_me")}</h1>
               <p className="text | max-w-[70ch] my-4 font-light">
-                {t.contact_text}
+                {t("contact_text")}
               </p>
               <div className="flex flex-col gap-4 mt-9">
                 <p className="text | font-light">
-                  {t.email}:{" "}
+                  {t("email")}:{" "}
                   <a
                     className={"clickable font-medium"}
                     href="mailto:alexcruducode@gmail.com"
@@ -164,7 +164,7 @@ const ContactForm = () => {
               />
               <div className={cn(styles.formElement, "text")}>
                 <div className={styles.label}>
-                  <label htmlFor="name">{t.name} *</label>
+                  <label htmlFor="name">{t("name")} *</label>
                   {errors.name && (
                     <span className={styles.errorMessage}>
                       {errors.name.message}
@@ -180,7 +180,7 @@ const ContactForm = () => {
 
               <div className={cn(styles.formElement, "text")}>
                 <div className={styles.label}>
-                  <label htmlFor="email">{t.email} *</label>
+                  <label htmlFor="email">{t("email")} *</label>
                   {errors.email && (
                     <span className={styles.errorMessage}>
                       {errors.email.message}
@@ -196,7 +196,7 @@ const ContactForm = () => {
 
               <div className={cn(styles.formElement, "text")}>
                 <div className={styles.label}>
-                  <label htmlFor="subject">{t.subject} *</label>
+                  <label htmlFor="subject">{t("subject")} *</label>
                   {errors.subject && (
                     <span className={styles.errorMessage}>
                       {errors.subject.message}
@@ -212,7 +212,7 @@ const ContactForm = () => {
 
               <div className={cn(styles.formElement, "text")}>
                 <div className={styles.label}>
-                  <label htmlFor="message">{t.message} *</label>
+                  <label htmlFor="message">{t("message")} *</label>
                   {errors.message && (
                     <span className={styles.errorMessage}>
                       {errors.message.message}
@@ -227,32 +227,32 @@ const ContactForm = () => {
 
               <div className={styles.captchaText}>
                 <small>
-                  {t.privacy_1}{" "}
+                  {t("privacy_1")}{" "}
                   <a
                     className={cn("hoverable", styles.captchaLink)}
                     href="https://policies.google.com/privacy"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {t.privacy_policy}{" "}
+                    {t("privacy_policy")}{" "}
                   </a>
-                  {t.privacy_2}{" "}
+                  {t("privacy_2")}{" "}
                   <a
                     className={cn("hoverable", styles.captchaLink)}
                     href="https://policies.google.com/terms"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {t.terms_of_service}{" "}
+                    {t("terms_of_service")}{" "}
                   </a>
-                  {t.privacy_3}
+                  {t("privacy_3")}
                 </small>
               </div>
               <ButtonAnimation
                 onClick={handleSubmit(onSubmit)}
                 backgroundColor={theme === "dark" ? "#7c7c7c" : "#171717"}
               >
-                {isLoading ? <Loader /> : <p>{t.submit}</p>}
+                {isLoading ? <Loader /> : <p>{t("submit")}</p>}
               </ButtonAnimation>
             </motion.form>
           </div>
