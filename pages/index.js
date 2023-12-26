@@ -41,7 +41,7 @@ export default function Home() {
         />
         <link rel="mask-icon" href="/images/favicon.ico" color="#000000"></link>
       </Head>
-      <main className={`app ${theme}`}>
+      <main className={`app ${theme} overscroll-none overflow-x-hidden`}>
         <Nav />
         <Menu />
         <Introduction />

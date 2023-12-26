@@ -107,19 +107,15 @@ export default function Nav() {
               </AnimatePresence>
             </div>
           </div>
-          {/* <button 
+          <div className={"hidden md:flex"}>
+            <ButtonAnimation
               onClick={saveFile}
-              className="button clickable text | rounded-full px-4 py-2 hidden md:flex justify-center items-center"
+              backgroundColor={theme === "dark" ? "#7c7c7c" : "#171717"}
             >
-              <span className="leading-none">CV</span><HiOutlineDownload size={15} />
-            </button> */}
-          <ButtonAnimation
-            onClick={saveFile}
-            backgroundColor={theme === "dark" ? "#7c7c7c" : "#171717"}
-          >
-            <p className="leading-none">CV</p>
-            <HiOutlineDownload className="relative z-[2]" size={15} />
-          </ButtonAnimation>
+              <p className="leading-none">CV</p>
+              <HiOutlineDownload className="relative z-[2]" size={15} />
+            </ButtonAnimation>
+          </div>
           <button className="text clickable md:hidden" onClick={toggleMenu}>
             {menuIsOpen === false ? (
               <CgMenuMotion size={35} />

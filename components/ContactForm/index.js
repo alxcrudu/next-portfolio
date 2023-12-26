@@ -1,5 +1,9 @@
 import { useContext, useRef, useState } from "react";
 
+import { useTranslation } from "next-i18next";
+
+import { ThemeContext } from "../../context/ThemeProvider";
+
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -8,8 +12,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 import { useSnackbar } from "notistack";
 
-// import ButtonPrimary from "../ButtonPrimary";
 import Loader from "../Loader";
+import ButtonAnimation from "../ButtonAnimation";
 
 import { motion } from "framer-motion";
 
@@ -18,9 +22,6 @@ import axios from "axios";
 import { cn } from "../../helpers/cn";
 
 import * as styles from "./styles";
-import { ThemeContext } from "../../context/ThemeProvider";
-import ButtonAnimation from "../ButtonAnimation";
-import { useTranslation } from "next-i18next";
 
 const schema = yup.object().shape({
   name: yup.string().required("Name is required"),

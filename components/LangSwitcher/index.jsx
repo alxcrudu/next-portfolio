@@ -11,11 +11,15 @@ const LangSwitcher = () => {
   };
 
   return (
-    <select value={locale} onChange={handleLocaleChange} style={styles.select}>
-      <option style={styles.option} value="en">
+    <select
+      value={locale}
+      onChange={handleLocaleChange}
+      className={styles.select}
+    >
+      <option className={styles.option} value="en">
         🇺🇸 En
       </option>
-      <option style={styles.option} value="ro">
+      <option className={styles.option} value="ro">
         🇷🇴 Ro
       </option>
     </select>

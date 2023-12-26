@@ -1,10 +1,7 @@
-export const select = {
-  border: "none",
-  background: "none",
-  fontWeight: 500,
-  cursor: "pointer",
-};
+export const select = `
+  border-none bg-none font-normal cursor-pointer
+`;
 
-export const option = {
-  fontWeight: 500,
-};
+export const option = `
+  font-normal
+`;

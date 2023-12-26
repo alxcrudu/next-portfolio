@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HiOutlineDownload } from "react-icons/hi";
 import { TbMoon, TbSun } from "react-icons/tb";
 import { useTranslation } from "next-i18next";
+import LangSwitcher from "./LangSwitcher";
 
 export default function Menu() {
   const [sunShow, setSunShow] = useState(false);
@@ -61,16 +62,8 @@ export default function Menu() {
           <aside />
           <div className="mb-12">
           <div className="theme-div text-menu | cursor-pointer flex flex-col items-center mb-6">
-            <label className="custom-selector | mb-6 clickable">
-              <select 
-                onChange={setLanguage}
-                defaultValue={locale}
-              >
-                <option value="en">EN</option>
-                <option value="ro">RO</option>
-              </select>
-            </label>
-            <div className="clickable toggle-icons" onClick={toggleTheme}>
+            <LangSwitcher />
+            <div className="clickable toggle-icons mt-8" onClick={toggleTheme}>
                 <AnimatePresence>
                   {sunShow && 
                     <motion.div 
