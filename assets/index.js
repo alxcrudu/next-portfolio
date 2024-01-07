@@ -4,5 +4,6 @@ export const images = {
   blogrProj: require("/assets/blogr.png"),
   passGen: require("/assets/passgen.png"),
   kanban: require("/assets/kanban.png"),
-  invoice: require("/assets/invoice.png")
+  invoice: require("/assets/invoice.png"),
+  inno: require("/assets/inno-artwork.png")
 };

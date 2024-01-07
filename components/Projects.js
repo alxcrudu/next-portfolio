@@ -12,10 +12,19 @@ export default function Projects() {
 
   const projects = [
     {
+        title: "Innoserv Website",
+        descr: t("desc7"),
+        img: images.inno,
+        bg: "ova",
+        github: "#",
+        live: "https://innoserv-europe.com",
+        alt: "Innoserv Website Artwork",
+    },
+    {
         title: "MERN Invoice app",
         descr: t("desc6"),
         img: images.invoice,
-        bg: "ova",
+        bg: "ovb",
         github: "https://github.com/alxcrudu/mern-invoice-app",
         live: "https://fine-erin-gosling-boot.cyclic.app/",
         alt: "To-do project image",
@@ -24,7 +33,7 @@ export default function Projects() {
         title: "MERN CRUD Kanban",
         descr: t("desc5"),
         img: images.kanban,
-        bg: "ovb",
+        bg: "ovc",
         github: "https://github.com/alxcrudu/mern-crud-kanban",
         live: "https://sore-erin-goat-wig.cyclic.app/",
         alt: "To-do project image",
@@ -33,7 +42,7 @@ export default function Projects() {
         title: "T3 To-do app",
         descr: t("desc1"),
         img: images.todo,
-        bg: "ovc",
+        bg: "ovb",
         github: "https://github.com/alxcrudu/to-do-t3",
         live: "https://to-do-t3.vercel.app/",
         alt: "To-do project image",

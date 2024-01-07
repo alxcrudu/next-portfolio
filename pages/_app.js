@@ -8,14 +8,13 @@ import { appWithTranslation } from "next-i18next";
 
 import { SnackbarProvider } from "notistack";
 
-import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import { ReactLenis } from "@studio-freight/react-lenis";
 
 import { Epilogue } from "@next/font/google";
 
 const epilogue = Epilogue({ subsets: ["latin"] });
 
 const App = ({ Component, pageProps }) => {
-  const lenis = useLenis();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
