@@ -32,12 +32,12 @@ export default function Menu() {
   };
 
   const saveFile = () => {
-    fetch("crudu_alexandru_cv_2023.pdf").then(res => {
+    fetch("CV_Alexandru_Crudu_2024.pdf").then(res => {
       res.blob().then(blob => {
         const fileURL = window.URL.createObjectURL(blob);
         let alink = document.createElement("a");
         alink.href = fileURL;
-        alink.download = "crudu_alexandru_cv_2023.pdf";
+        alink.download = "CV_Alexandru_Crudu_2024.pdf";
         alink.click();
       })
     })
