@@ -1,4 +1,5 @@
 import { useRef, useEffect, useContext, useCallback, useState } from "react";
+import { useRouter } from "next/router";
 import { ThemeContext } from "../context/ThemeProvider";
 import { MenuContext } from "../context/MenuProvider";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,6 +15,7 @@ export default function Nav() {
   const [moonShow, setMoonShow] = useState(false);
   const { theme, changeTheme } = useContext(ThemeContext);
   const { menuIsOpen, toggleMenu } = useContext(MenuContext);
+  const { locale } = useRouter();
 
   const myNav = useRef();
 
@@ -34,15 +36,30 @@ export default function Nav() {
   }
 
   const saveFile = () => {
-    fetch("CV_Alexandru_Crudu_2024.pdf").then((res) => {
-      res.blob().then((blob) => {
-        const fileURL = window.URL.createObjectURL(blob);
-        let alink = document.createElement("a");
-        alink.href = fileURL;
-        alink.download = "CV_Alexandru_Crudu_2024.pdf";
-        alink.click();
+    if (locale == "en") {
+      fetch("Alexandru_Crudu-Resume_En-Fullstack-Web-Developer.pdf").then(
+        (res) => {
+          res.blob().then((blob) => {
+            const fileURL = window.URL.createObjectURL(blob);
+            let alink = document.createElement("a");
+            alink.href = fileURL;
+            alink.download =
+              "Alexandru_Crudu-Resume_En-Fullstack-Web-Developer.pdf";
+            alink.click();
+          });
+        }
+      );
+    } else {
+      fetch("CV_Alexandru_Crudu_2024.pdf").then((res) => {
+        res.blob().then((blob) => {
+          const fileURL = window.URL.createObjectURL(blob);
+          let alink = document.createElement("a");
+          alink.href = fileURL;
+          alink.download = "CV_Alexandru_Crudu_2024.pdf";
+          alink.click();
+        });
       });
-    });
+    }
   };
 
   const onScroll = useCallback(() => {

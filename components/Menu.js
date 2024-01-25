@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { ThemeContext } from "../context/ThemeProvider";
 import { MenuContext } from "../context/MenuProvider";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,11 +13,12 @@ export default function Menu() {
   const [moonShow, setMoonShow] = useState(false);
   const { theme, changeTheme } = useContext(ThemeContext);
   const { closeMenu, menuIsOpen } = useContext(MenuContext);
+  const { locale } = useRouter();
 
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
 
   useEffect(() => {
-    if(theme === "dark") {
+    if (theme === "dark") {
       setSunShow(true);
       setMoonShow(false);
     } else {
@@ -24,84 +26,102 @@ export default function Menu() {
       setMoonShow(true);
     }
   }, []); // eslint-disable-line
-  
+
   function toggleTheme() {
     setSunShow(!sunShow);
     setMoonShow(!moonShow);
     changeTheme();
-  };
+  }
 
   const saveFile = () => {
-    fetch("CV_Alexandru_Crudu_2024.pdf").then(res => {
-      res.blob().then(blob => {
-        const fileURL = window.URL.createObjectURL(blob);
-        let alink = document.createElement("a");
-        alink.href = fileURL;
-        alink.download = "CV_Alexandru_Crudu_2024.pdf";
-        alink.click();
-      })
-    })
+    if (locale == "en") {
+      fetch("Alexandru_Crudu-Resume_En-Fullstack-Web-Developer.pdf").then(
+        (res) => {
+          res.blob().then((blob) => {
+            const fileURL = window.URL.createObjectURL(blob);
+            let alink = document.createElement("a");
+            alink.href = fileURL;
+            alink.download =
+              "Alexandru_Crudu-Resume_En-Fullstack-Web-Developer.pdf";
+            alink.click();
+          });
+        }
+      );
+    } else {
+      fetch("CV_Alexandru_Crudu_2024.pdf").then((res) => {
+        res.blob().then((blob) => {
+          const fileURL = window.URL.createObjectURL(blob);
+          let alink = document.createElement("a");
+          alink.href = fileURL;
+          alink.download = "CV_Alexandru_Crudu_2024.pdf";
+          alink.click();
+        });
+      });
+    }
   };
 
   useEffect(() => {
     window.addEventListener("resize", () => {
-      if(window.innerWidth > 768) closeMenu();
+      if (window.innerWidth > 768) closeMenu();
     });
-  }, []) // eslint-disable-line
+  }, []); // eslint-disable-line
 
   return (
     <AnimatePresence>
       {menuIsOpen && (
-        <motion.div 
+        <motion.div
           className="side-menu fixed h-full z-10 w-1/2 right-0 flex flex-col items-center justify-between text-center md:hidden"
-          initial={{x: "100%"}}
-          animate={{x: 0}}
-          exit={{x: "100%"}}
-          transition={{type: "tween"}}
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ type: "tween" }}
         >
           <aside />
           <div className="mb-12">
-          <div className="theme-div text-menu | cursor-pointer flex flex-col items-center mb-6">
-            <LangSwitcher />
-            <div className="clickable toggle-icons mt-8" onClick={toggleTheme}>
+            <div className="theme-div text-menu | cursor-pointer flex flex-col items-center mb-6">
+              <LangSwitcher />
+              <div
+                className="clickable toggle-icons mt-8"
+                onClick={toggleTheme}
+              >
                 <AnimatePresence>
-                  {sunShow && 
-                    <motion.div 
+                  {sunShow && (
+                    <motion.div
                       className="icon-toggle"
-                      initial={{ x: -50, y:25, rotate: -100, opacity: 0 }}
-                      animate={{ x: 0, y:0, rotate: 0, opacity: 1 }}
-                      exit={{ x: 50, y:25, rotate: 100, opacity: 0 }}
-                      transition={{type: "spring", duration: .8}}
+                      initial={{ x: -50, y: 25, rotate: -100, opacity: 0 }}
+                      animate={{ x: 0, y: 0, rotate: 0, opacity: 1 }}
+                      exit={{ x: 50, y: 25, rotate: 100, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.8 }}
                     >
                       <TbSun size={25} />
                     </motion.div>
-                  }
+                  )}
                 </AnimatePresence>
                 <AnimatePresence>
-                  {moonShow && 
+                  {moonShow && (
                     <motion.div
                       className="icon-toggle"
-                      initial={{ x: -50, y:25, rotate: -100, opacity: 0 }}
-                      animate={{ x: 0, y:0, rotate: 0, opacity: 1 }}
-                      exit={{ x: 50, y:25, rotate: 100, opacity: 0 }}
-                      transition={{type: "spring", duration: .8}}
+                      initial={{ x: -50, y: 25, rotate: -100, opacity: 0 }}
+                      animate={{ x: 0, y: 0, rotate: 0, opacity: 1 }}
+                      exit={{ x: 50, y: 25, rotate: 100, opacity: 0 }}
+                      transition={{ type: "spring", duration: 0.8 }}
                     >
                       <TbMoon size={25} />
                     </motion.div>
-                  }
+                  )}
                 </AnimatePresence>
               </div>
-          </div>
-          <button
-            onClick={saveFile}
-            className="button-menu clickable text-menu | rounded-full px-4 py-2 flex justify-center items-center"
-          >
-            <span className="leading-none">{t("download")}</span>
-            <HiOutlineDownload size={15} />
-          </button>
+            </div>
+            <button
+              onClick={saveFile}
+              className="button-menu clickable text-menu | rounded-full px-4 py-2 flex justify-center items-center"
+            >
+              <span className="leading-none">{t("download")}</span>
+              <HiOutlineDownload size={15} />
+            </button>
           </div>
         </motion.div>
       )}
     </AnimatePresence>
-  )
-};
+  );
+}
