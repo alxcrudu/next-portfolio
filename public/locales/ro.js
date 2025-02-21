@@ -19,7 +19,7 @@ const ro = {
 // about
     abt: "Despre",
     who: "CINE SUNT",
-    d1: "Ma numesc Crudu Alexandru. Am 23 ani, locuiesc in Romania, si sunt developer full-stack.",
+    d1: "Ma numesc Crudu Alexandru. Am 25 ani, locuiesc in Romania, si sunt developer full-stack.",
     d2: "Imi place evolutia continua in domeniu si sa experimentez cu noi framework-uri, librarii, tehnologii.",
     d4: "Am experienta cu: ",
     d4s: "Typescript, Node.js, React, Next.js, Testare (unit, interatie, e2e), ORM-uri (prisma, sequalize), Docker, AWS, Git etc.",
