@@ -35,25 +35,25 @@ export default function Menu() {
 
   const saveFile = () => {
     if (locale == "en") {
-      fetch("Alexandru_Crudu-Resume_En-Fullstack-Web-Developer.pdf").then(
+      fetch("CV-2025.pdf").then(
         (res) => {
           res.blob().then((blob) => {
             const fileURL = window.URL.createObjectURL(blob);
             let alink = document.createElement("a");
             alink.href = fileURL;
             alink.download =
-              "Alexandru_Crudu-Resume_En-Fullstack-Web-Developer.pdf";
+              "CV-2025.pdf";
             alink.click();
           });
         }
       );
     } else {
-      fetch("CV_Alexandru_Crudu_2024.pdf").then((res) => {
+      fetch("CV-2025.pdf").then((res) => {
         res.blob().then((blob) => {
           const fileURL = window.URL.createObjectURL(blob);
           let alink = document.createElement("a");
           alink.href = fileURL;
-          alink.download = "CV_Alexandru_Crudu_2024.pdf";
+          alink.download = "CV-2025.pdf";
           alink.click();
         });
       });
