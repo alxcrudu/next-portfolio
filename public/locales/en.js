@@ -19,7 +19,7 @@ const en = {
 // about
     abt: "About",
     who: "WHO I AM",
-    d1: "My name is Crudu Alexandru. I am 23 years old, I live in Romania, and I`m a full-stack developer.",
+    d1: "My name is Crudu Alexandru. I am 25 years old, I live in Romania, and I`m a full-stack developer.",
     d2: "I enjoy the constant change in the technologies used in the area and love diving into new frameworks, libraries and technologies.",
     d4: "I`m experienced with: ",
     d4s: "Typescript, Node.js, React, Next.js, Testing (unit, integration, e2e), ORMs (prisma, sequalize), Docker, AWS, Git and more.",
